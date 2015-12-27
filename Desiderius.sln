@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Desiderius", "Desiderius\Desiderius.fsproj", "{F152143B-E8F8-4686-96F0-F4C5E364E85E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PBN-Reader", "PBN-Reader\PBN-Reader.csproj", "{AAB30830-0662-4B30-93D6-47CDC47AD815}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desi_tests", "Desi_tests\Desi_tests.csproj", "{60ADFEC8-F4D5-405C-A0C5-C691B28FABF4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F152143B-E8F8-4686-96F0-F4C5E364E85E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F152143B-E8F8-4686-96F0-F4C5E364E85E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F152143B-E8F8-4686-96F0-F4C5E364E85E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F152143B-E8F8-4686-96F0-F4C5E364E85E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAB30830-0662-4B30-93D6-47CDC47AD815}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAB30830-0662-4B30-93D6-47CDC47AD815}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAB30830-0662-4B30-93D6-47CDC47AD815}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAB30830-0662-4B30-93D6-47CDC47AD815}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60ADFEC8-F4D5-405C-A0C5-C691B28FABF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60ADFEC8-F4D5-405C-A0C5-C691B28FABF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60ADFEC8-F4D5-405C-A0C5-C691B28FABF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60ADFEC8-F4D5-405C-A0C5-C691B28FABF4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
