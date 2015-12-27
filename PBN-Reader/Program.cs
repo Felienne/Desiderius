@@ -67,7 +67,9 @@ namespace PBN
 
         private static Desi.Hand toHand(string handString)
         {
-            var result = Desi.Hand.NewHand(FSharpList<Desi.Card>.Empty); //why does our create emptyhanded not work? It results in null? TODO: Ask Don!
+            var result = Desi.Hand.Empty;
+                
+             //why does our create emptyhanded not work? It results in null? TODO: Ask Don!
 
             //DECISION! We do represent Empty hands in the list, but they contain an empty list.
 
