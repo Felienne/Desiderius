@@ -5,7 +5,7 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Desiderius", "Desiderius\Desiderius.fsproj", "{F152143B-E8F8-4686-96F0-F4C5E364E85E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PBN-Reader", "PBN-Reader\PBN-Reader.csproj", "{AAB30830-0662-4B30-93D6-47CDC47AD815}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PBN", "PBN-Reader\PBN.csproj", "{AAB30830-0662-4B30-93D6-47CDC47AD815}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desi_tests", "Desi_tests\Desi_tests.csproj", "{60ADFEC8-F4D5-405C-A0C5-C691B28FABF4}"
 EndProject

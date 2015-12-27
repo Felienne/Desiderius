@@ -59,6 +59,10 @@
       <Project>{f152143b-e8f8-4686-96f0-f4c5e364e85e}</Project>
       <Name>Desiderius</Name>
     </ProjectReference>
+    <ProjectReference Include="..\PBN-Reader\PBN.csproj">
+      <Project>{aab30830-0662-4b30-93d6-47cdc47ad815}</Project>
+      <Name>PBN</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
