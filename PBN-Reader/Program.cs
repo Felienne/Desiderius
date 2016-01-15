@@ -67,7 +67,9 @@ namespace PBN
 
         private static Desi.Hand toHand(string handString)
         {
-            var result = Desi.Hand.Empty;
+            //var result = Desi.Hand.Empty;
+
+            var result = Desi.makeEmptyHanded;
                 
              //why does our create emptyhanded not work? It results in null? TODO: Ask Don!
 

@@ -24,7 +24,7 @@ type Hand =
 
 type Deal = Deal of Dealer * list<Hand> 
 
-let makeEmpyHanded =  //TODO: Ask Don why this results in null!
+let makeEmptyHanded =  //TODO: Ask Don why this results in null!
     Hand (List.empty)
    
 let addCardtoHand(c: Card, h: Hand) = 
@@ -72,6 +72,9 @@ type Condition =
     | And of Condition * Condition
     | Or of Condition * Condition
 
+let (&) (p:Condition)(q: Condition):Condition = 
+    And (p,q)
+
 let both (p:Condition)(q: Condition):Condition = //added because  And (NPoints (12,19, Spades), NCards (4,13,Spades)) had too much brackets. Was first called makeAnd, but both is nicer
     And (p,q)
 
@@ -80,6 +83,7 @@ let either (p:Condition)(q: Condition):Condition = //added because  And (NPoints
 
 let all (p:Condition)(q: Condition)(r:Condition):Condition = //added because  And (NPoints (12,19, Spades), NCards (4,13,Spades)) had even more brackets.
     And(And(p,q),r)
+
 
 let forAllSuits (p:Suit -> Condition): Condition = 
     both (both (p Clubs) (p Diamonds))
@@ -102,22 +106,23 @@ let raise (b:Bid) (i:int):Bid =
 
 let Acol1(hist:BidHistory):RuleSet =
 
-    (both (points 15 17) (forAllSuits (cards 2 13)), Bid (1, SA)) ::  //if possible, we always prefer to open 1SA
+    [ (points 15 17 & forAllSuits (cards 2 13), Bid (1, SA))        
+      //if possible, we always prefer to open 1SA
+      //opening 1SA interesting question: do we want/need universal quantifiers? For all colors > 2
+      //do we support the natively or just with a fun?
 
-    //opening 1SA interesting question: do we want/need universal quantifiers? For all colors > 2
-    //do we support the natively or just with a fun
+      //we bid five in order of hight to low, if there is a 6 in there (and the hard is not too strong), we also bid the highest
+      (both (points 12 19) (cards 5 13 Spades) , Bid (1, Spades))
+      (both (points 12 19) (cards 5 13 Clubs) , Bid (1, Clubs)) 
+      (both (points 12 19) (cards 5 13 Hearts) , Bid (1, Hearts)) 
+      (both (points 12 19) (cards 5 13 Diamonds), Bid (1, Diamonds))
 
-    //we bid five in order of hight to low, if there is a 6 in there (and the hard is not too strong), we also bid the highest
-    (both (points 12 19) (cards 5 13 Spades) , Bid (1, Spades)) ::
-    (both (points 12 19) (cards 5 13 Clubs) , Bid (1, Clubs)) ::
-    (both (points 12 19) (cards 5 13 Hearts) , Bid (1, Hearts)) ::
-    (both (points 12 19) (cards 5 13 Diamonds), Bid (1, Diamonds)) ::
+      //we bid four in order of low to high
+      (both (points 12 19) (cards 4 13 Clubs) , Bid (1, Clubs)) 
+      (both (points 12 19) (cards 4 13 Diamonds) , Bid (1, Diamonds)) 
+      (both (points 12 19) (cards 4 13 Hearts) , Bid (1, Hearts)) 
+      (both (points 12 19) (cards 4 13 Spades) , Bid (1, Spades))]
 
-    //we bid four in order of low to high
-    (both (points 12 19) (cards 4 13 Clubs) , Bid (1, Clubs)) ::
-    (both (points 12 19) (cards 4 13 Diamonds) , Bid (1, Diamonds)) ::
-    (both (points 12 19) (cards 4 13 Hearts) , Bid (1, Hearts)) ::
-    [(both (points 12 19) (cards 4 13 Spades) , Bid (1, Spades))]
 
 let Acol2(hist:BidHistory):RuleSet = 
 
@@ -134,32 +139,30 @@ let Acol2(hist:BidHistory):RuleSet =
     | Bid (partnerValue, partnerSuit) ->
 
     //double jump is preemptive
-     (both (points 6 9) (cards 7 13 Diamonds), Bid (3, Diamonds)) ::
-     (both (points 6 9) (cards 7 13 Hearts), Bid (3, Hearts)) ::
-     (both (points 6 9) (cards 7 13 Spades), Bid (3, Spades)) ::
+    [ (both (points 6 9) (cards 7 13 Diamonds), Bid (3, Diamonds)) 
+      (both (points 6 9) (cards 7 13 Hearts), Bid (3, Hearts)) 
+      (both (points 6 9) (cards 7 13 Spades), Bid (3, Spades)) 
 
     //single jump is 6 card and strong hand
-     (both (points 13 27) (cards 6 13 Diamonds), Bid (2, Diamonds)) ::
-     (both (points 13 27) (cards 6 13 Hearts), Bid (2, Hearts)) ::
-     (both (points 13 27) (cards 6 13 Spades), Bid (2, Spades)) ::
+      (both (points 13 27) (cards 6 13 Diamonds), Bid (2, Diamonds)) 
+      (both (points 13 27) (cards 6 13 Hearts), Bid (2, Hearts)) 
+      (both (points 13 27) (cards 6 13 Spades), Bid (2, Spades)) 
 
     //answer opening suit
-     (both (points 6 9) (cards 4 13 partnerSuit), raise partnerBid 1) ::
-     (both (points 10 11) (cards 4 13 partnerSuit), raise partnerBid 2) ::
-     (both (points 12 15) (cards 4 13 partnerSuit), raise partnerBid 3) ::
+      (both (points 6 9) (cards 4 13 partnerSuit), raise partnerBid 1) 
+      (both (points 10 11) (cards 4 13 partnerSuit), raise partnerBid 2) 
+      (both (points 12 15) (cards 4 13 partnerSuit), raise partnerBid 3) 
 
     //bid new color if it can be bid on the one level
     //---> we need a comparison operatior now
-     (both (points 6 9) (cards 4 13 Diamonds), Bid (1, Diamonds)) :: 
-
-
+      (both (points 6 9) (cards 4 13 Diamonds), Bid (1, Diamonds)) 
 //     (both (points 10 27) (cards 5 13 Hearts), Bid (2, Hearts)) ::
 //     (both (points 10 27) (cards 5 13 Spades), Bid (2, Spades)) ::
 
     //SA answers
-     (both (points 6 9) (cards 0 3 partnerSuit), Bid (1, SA)) :: //no trump support
-     (both (points 10 11) (forAllSuits (cards 2 13)), Bid (2, SA)) :: //sans hand
-     [(both (points 12 14) (forAllSuits (cards 2 13)), Bid (3, SA))] //sans hand
+      (both (points 6 9) (cards 0 3 partnerSuit), Bid (1, SA))  //no trump support
+      (both (points 10 11) (forAllSuits (cards 2 13)), Bid (2, SA))  //sans hand
+      (both (points 12 14) (forAllSuits (cards 2 13)), Bid (3, SA))] //sans hand
 
 let createAcol:BiddingSystem = Acol1 :: [Acol2]
 
