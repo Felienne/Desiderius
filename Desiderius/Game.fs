@@ -17,10 +17,6 @@ module Player =
    let create d h = 
       {Direction = d; Hand = h}
 
-   let nextCardnoArgs {Direction = direction; Hand = h} = 
-      Desi.Card (Desi.Clubs, Desi.Rank.Eight)
-
-
    //this method describes the actual playing strategy
    //work in progress, first step is to just not break any rules
    //I know this strategy is sort of what a monkey would play
@@ -66,8 +62,8 @@ module Game =
 
    let winningCard {Trump=trump} (trick: List<Desi.Card>):Desi.Card =
       
-      let allTrumps = trick |> List.filter (fun x-> helper.getSuit(x) = trump)
-      let allTrumpsinOrder = List.sortBy (fun x-> helper.getRank(x)) allTrumps
+      let allTrumps = trick |> List.filter (fun x-> helper.getSuit(x) = trump) 
+      let allTrumpsinOrder = List.sortBy (fun x-> helper.getRank(x)) allTrumps |> List.rev
          
       match allTrumpsinOrder with
          | h::t -> h
@@ -76,7 +72,7 @@ module Game =
          let openSuit = List.nth trick 0 |> helper.getSuit
          let allOpenSuit = List.filter (fun x -> helper.getSuit(x) = openSuit) trick
 
-         let allOpenSuitinOrder = List.sortBy (fun x-> helper.getRank(x)) allOpenSuit
+         let allOpenSuitinOrder = List.sortBy (fun x-> helper.getRank(x)) allOpenSuit |> List.rev
 
          List.nth allOpenSuitinOrder 0
 
