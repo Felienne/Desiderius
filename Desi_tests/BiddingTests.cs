@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Desiderius;
 using Microsoft.FSharp.Collections;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -7,7 +8,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Desi_tests
 {
     [TestClass]
-    public class UnitTest1
+    public class BiddingTests
     {
         public static FSharpList<Desi.Bid> emptyHistory = ListModule.OfSeq(new List<Desi.Bid>());
 
@@ -329,7 +330,9 @@ namespace Desi_tests
              var pointsEast = Desi.pointsinHand(eastHand);
 
              var history = emptyHistory;
+
              var bidResultWest = Desi.getBid(westHand, Desi.createAcol, history, 0);
+             
              Assert.AreEqual(Desi.Bid.NewBid(1, Desi.Suit.Hearts), bidResultWest);
 
              history = ListModule.OfSeq(new List<Desi.Bid> { bidResultWest });

@@ -1,193 +1,214 @@
-﻿//types of the game
-module Desi
+﻿namespace Desiderius
 
-type Player = West | South | North | East
 
-let partner(p:Player) = 
-    match p with
-    | West -> East
-    | East -> West
-    | South -> North
-    | North -> South
+//types of the game
+module Desi =
 
-type Dealer = Dealer of Player 
+    type Player =  North = 0 | East = 1 | South = 2 | West = 3
 
-type Rank = A | K | Q | J | T | Nine | Eight | Seven | Six | Five | Four | Three | Two
+    let playerFromInt (i:int):Player = 
+       enum i
 
-type Suit = Spades | Hearts | Diamonds | Clubs | SA 
+    let partner(p:Player):Player = 
+      let partnerInt = (int p + 2) % 4
+      enum partnerInt
 
-type Card = Card of Suit * Rank
+    let next(p:Player) = 
+        match p with
+        | West -> Player.North
+        | East -> Player.South
+        | South -> Player.West
+        | North -> Player.South
 
-type Hand = 
-    Hand of list<Card>
-    | Empty
+    type Dealer = Dealer of Player 
 
-type Deal = Deal of Dealer * list<Hand> 
+    type Rank = A = 14 | K = 13 | Q = 12 | J = 11 | T = 10 | Nine = 9 | Eight = 8 | Seven = 7 | Six = 6 | Five = 5 | Four = 4 | Three = 3 | Two = 2
 
-let makeEmptyHanded =  //TODO: Ask Don why this results in null!
-    Hand (List.empty)
+    type Suit = Spades | Hearts | Diamonds | Clubs | SA 
+
+    type Card = Card of Suit * Rank
+
+    type Hand = 
+        Hand of list<Card>
+        | Empty
+
+    type Deal = Deal of Dealer * list<Hand> 
+
+    let makeEmptyHanded =  
+        Hand (List.empty)
    
-let addCardtoHand(c: Card, h: Hand) = 
-    match h with
-    | Empty -> Hand [c]
-    | Hand (l) -> Hand (c::l)
+    let addCardtoHand(c: Card, h: Hand) = 
+        match h with
+        | Empty -> Hand [c]
+        | Hand (l) -> Hand (c::l)
 
-//auxiliary functions for analysis of hands
+    //auxiliary functions for analysis of hands
 
-let cardtoPoint(c:Card): int = 
-    match c with
-    | Card (s,v) -> 
-        match v with
-        | A -> 4
-        | K -> 3
-        | Q -> 2
-        | J -> 1
-        | _ -> 0
+    let cardtoPoint(c:Card): int = 
+        match c with
+        | Card (s,v) -> 
+            match v with
+            | A -> 4
+            | K -> 3
+            | Q -> 2
+            | J -> 1
+            | _ -> 0
 
-let pointsinHand(h:Hand): int = 
-    match h with
-    | Hand list -> List.fold (+) 0 (List.map cardtoPoint list)
+    let pointsinHand(h:Hand): int = 
+        match h with
+        | Hand list -> List.fold (+) 0 (List.map cardtoPoint list)
 
-let isSuit (suit: Suit) (c:Card) = 
-    match c with
-    | Card (s,r) -> s = suit 
+    let isSuit (suit: Suit) (c:Card) = 
+        match c with
+        | Card (s,r) -> s = suit 
 
-let cardsofSuitinHand(h:Hand) (s:Suit) : int = 
-    match h with
-    | Hand h -> List.length (List.filter (isSuit s) h)
+    let cardsofSuitinHand(h:Hand) (s:Suit) : int = 
+        match h with
+        | Hand h -> List.length (List.filter (isSuit s) h)
 
+    //auxiliary functions for showing hands
 
+    let showCard (c:Card) = 
+        match c with 
+        | Card (s, r) -> (sprintf "%A" s) + (sprintf "%A" r) + " "
 
-//Types of the Bidding System
-
-type Bid = 
-      Pass
-    | Bid of int * Suit
-
-type BidHistory = Bid List
-
-type Condition = 
-      NCards of int * int * Suit //min, max, suit
-    | NPoints of int * int //min, max
-    | And of Condition * Condition
-    | Or of Condition * Condition
-
-let (&) (p:Condition)(q: Condition):Condition = 
-    And (p,q)
-
-let (:=) (p:Condition)(b:Bid):Condition*Bid = 
-    (p,b)
-
-let both (p:Condition)(q: Condition):Condition = //added because  And (NPoints (12,19, Spades), NCards (4,13,Spades)) had too much brackets. Was first called makeAnd, but both is nicer
-    And (p,q)
-
-let either (p:Condition)(q: Condition):Condition = //added because  And (NPoints (12,19, Spades), NCards (4,13,Spades)) had too much brackets. Was first called makeAnd, but both is nicer
-    Or (p,q)
-
-let all (p:Condition)(q: Condition)(r:Condition):Condition = //added because  And (NPoints (12,19, Spades), NCards (4,13,Spades)) had even more brackets.
-    And(And(p,q),r)
+    let showHand (h:Hand) = 
+        match h with
+        | Empty -> ""
+        | Hand list -> (List.map showCard list) |> List.fold (+) "" 
 
 
-let forAllSuits (p:Suit -> Condition): Condition = 
-    both (both (p Clubs) (p Diamonds))
-        (both (p Spades) (p Hearts))
 
-let points (min:int) (max:int) = //same as above
-    NPoints (min, max)
+    //Types of the Bidding System
 
-let cards (min:int) (max:int) (s:Suit) = //same as above
-    NCards (min, max,s)
+    type Bid = 
+          Pass
+        | Bid of int * Suit
 
-type RuleSet = (Condition * Bid) list
+    type BidHistory = Bid List
 
-type BiddingSystem = (BidHistory -> RuleSet) list
+    type Condition = 
+          NCards of int * int * Suit //min, max, suit
+        | NPoints of int * int //min, max
+        | And of Condition * Condition
+        | Or of Condition * Condition
 
-let raise (b:Bid) (i:int):Bid = 
-    match b with 
-    | Bid (v,s) -> Bid (v+1,s)
+    let (&) (p:Condition)(q: Condition):Condition = 
+        And (p,q)
 
+    let (:=) (p:Condition)(b:Bid):Condition*Bid = 
+        (p,b)
 
-let Acol1(hist:BidHistory):RuleSet =
+    let both (p:Condition)(q: Condition):Condition = //added because  And (NPoints (12,19, Spades), NCards (4,13,Spades)) had too much brackets. Was first called makeAnd, but both is nicer
+        And (p,q)
 
-    [ points 15 17 & forAllSuits (cards 2 13) := Bid (1, SA)      
-      //if possible, we always prefer to open 1SA
-      //opening 1SA interesting question: do we want/need universal quantifiers? For all colors > 2
-      //do we support the natively or just with a fun?
+    let either (p:Condition)(q: Condition):Condition = //added because  And (NPoints (12,19, Spades), NCards (4,13,Spades)) had too much brackets. Was first called makeAnd, but both is nicer
+        Or (p,q)
 
-      //we bid five in order of hight to low, if there is a 6 in there (and the hard is not too strong), we also bid the highest
-      points 15 17 & cards 5 13 Spades := Bid (1, Spades) 
-
-      points 12 19 & cards 5 13 Clubs := Bid (1, Clubs) 
-      points 12 19 & cards 5 13 Hearts := Bid (1, Hearts)
-      points 12 19 & cards 5 13 Diamonds:= Bid (1, Diamonds)
-
-      //we bid four in order of low to high
-      points 12 19 & cards 4 13 Clubs := Bid (1, Clubs) 
-      points 12 19 & cards 4 13 Diamonds := Bid (1, Diamonds) 
-      points 12 19 & cards 4 13 Hearts := Bid (1, Hearts) 
-      points 12 19 & cards 4 13 Spades := Bid (1, Spades)]
+    let all (p:Condition)(q: Condition)(r:Condition):Condition = //added because  And (NPoints (12,19, Spades), NCards (4,13,Spades)) had even more brackets.
+        And(And(p,q),r)
 
 
-let Acol2(hist:BidHistory):RuleSet = 
+    let forAllSuits (p:Suit -> Condition): Condition = 
+        both (both (p Clubs) (p Diamonds))
+            (both (p Spades) (p Hearts))
 
-    //answers to a one bid here
+    let points (min:int) (max:int) = //same as above
+        NPoints (min, max)
 
-    //we list the history from new to oldest, so our partner's answer is the second in the current list:
-    // partner :: opponent :: rest of history = (me:: opponent:: partner :: etc....)
+    let cards (min:int) (max:int) (s:Suit) = //same as above
+        NCards (min, max,s)
 
-    match hist with 
-    | partnerBid :: x -> //we could have also used List 2 here, but this looks nicer (it is almost the comment I typed!)
-    //TODO: add 'tussenbod' here too!
+    type RuleSet = (Condition * Bid) list
 
-    match partnerBid with
-    | Bid (partnerValue, partnerSuit) ->
+    type BiddingSystem = (BidHistory -> RuleSet) list
 
-    //double jump is preemptive
-    [ points 6 9 & cards 7 13 Diamonds := Bid (3, Diamonds) 
-      points 6 9 & cards 7 13 Hearts := Bid (3, Hearts)
-      points 6 9 & cards 7 13 Spades := Bid (3, Spades)
-
-    //single jump is 6 card and strong hand
-      points 13 27 & cards 6 13 Diamonds := Bid (2, Diamonds)
-      points 13 27 & cards 6 13 Hearts := Bid (2, Hearts) 
-      points 13 27 & cards 6 13 Spades := Bid (2, Spades) 
-
-    //answer opening suit
-      points 6 9 & cards 4 13 partnerSuit := raise partnerBid 1
-      points 10 11 & cards 4 13 partnerSuit := raise partnerBid 2
-      points 12 15 & cards 4 13 partnerSuit := raise partnerBid 3
-
-    //bid new color if it can be bid on the one level
-    //---> we need a comparison operatior now
-      points 6 9 & cards 4 13 Diamonds := Bid (1, Diamonds)
-//     points 10 27) (cards 5 13 Hearts), Bid (2, Hearts)) ::
-//     points 10 27) (cards 5 13 Spades), Bid (2, Spades)) ::
-
-    //SA answers
-      points 6 9&cards 0 3 partnerSuit := Bid (1, SA)  //no trump support
-      points 10 11 & forAllSuits (cards 2 13) := Bid (2, SA)  //sans hand
-      points 12 14 & forAllSuits (cards 2 13) := Bid (3, SA)] //sans hand
-
-let createAcol:BiddingSystem = Acol1 :: [Acol2]
-
-let rec fits (cards:Hand) (c:Condition):bool  = 
-    match c with
-    | NCards (min, max, s) -> cardsofSuitinHand cards s >= min && cardsofSuitinHand cards s <= max 
-    | NPoints (min, max) -> pointsinHand cards >= min && pointsinHand cards <= max 
-    | And (p,q) -> fits cards p && fits cards q 
-    | Or (p,q) -> fits cards p || fits cards q 
+    let raise (b:Bid) (i:int):Bid = 
+        match b with 
+        | Bid (v,s) -> Bid (v+1,s)
 
 
-let rec getBidRule (cards:Hand) (r:RuleSet):Bid =
-    match r with
-    | [] -> Pass // no more rules to apply, Pass
-    | ((c,b) :: t) -> match fits cards c  with
-                        | true -> b  //the condition matches, so bid this bid 
-                        | false -> getBidRule cards (t) //try the remaining rules
+    let Acol1(hist:BidHistory):RuleSet =
 
-let rec getBid (cards:Hand) (sys:BiddingSystem) (history: BidHistory) (i:int):Bid =
-    match sys with 
-    | [] -> Pass //there is no ruleset given, we do not know what to do so Pass
-    | l -> let f = List.nth sys i //get the ith ruleset, apply it to the history
-           getBidRule cards (f history) 
+        [ points 15 17 & forAllSuits (cards 2 13) := Bid (1, SA)      
+          //if possible, we always prefer to open 1SA
+          //opening 1SA interesting question: do we want/need universal quantifiers? For all colors > 2
+          //do we support the natively or just with a fun?
+
+          //we bid five in order of hight to low, if there is a 6 in there (and the hard is not too strong), we also bid the highest
+          points 15 17 & cards 5 13 Spades := Bid (1, Spades) 
+
+          points 12 19 & cards 5 13 Clubs := Bid (1, Clubs) 
+          points 12 19 & cards 5 13 Hearts := Bid (1, Hearts)
+          points 12 19 & cards 5 13 Diamonds:= Bid (1, Diamonds)
+
+          //we bid four in order of low to high
+          points 12 19 & cards 4 13 Clubs := Bid (1, Clubs) 
+          points 12 19 & cards 4 13 Diamonds := Bid (1, Diamonds) 
+          points 12 19 & cards 4 13 Hearts := Bid (1, Hearts) 
+          points 12 19 & cards 4 13 Spades := Bid (1, Spades)]
+
+
+    let Acol2(hist:BidHistory):RuleSet = 
+
+        //answers to a one bid here
+
+        //we list the history from new to oldest, so our partner's answer is the second in the current list:
+        // partner :: opponent :: rest of history = (me:: opponent:: partner :: etc....)
+
+        match hist with 
+        | partnerBid :: x -> //we could have also used List 2 here, but this looks nicer (it is almost the comment I typed!)
+        //TODO: add 'tussenbod' here too!
+
+        match partnerBid with
+        | Bid (partnerValue, partnerSuit) ->
+
+        //double jump is preemptive
+        [ points 6 9 & cards 7 13 Diamonds := Bid (3, Diamonds) 
+          points 6 9 & cards 7 13 Hearts := Bid (3, Hearts)
+          points 6 9 & cards 7 13 Spades := Bid (3, Spades)
+
+        //single jump is 6 card and strong hand
+          points 13 27 & cards 6 13 Diamonds := Bid (2, Diamonds)
+          points 13 27 & cards 6 13 Hearts := Bid (2, Hearts) 
+          points 13 27 & cards 6 13 Spades := Bid (2, Spades) 
+
+        //answer opening suit
+          points 6 9 & cards 4 13 partnerSuit := raise partnerBid 1
+          points 10 11 & cards 4 13 partnerSuit := raise partnerBid 2
+          points 12 15 & cards 4 13 partnerSuit := raise partnerBid 3
+
+        //bid new color if it can be bid on the one level
+        //---> we need a comparison operatior now
+          points 6 9 & cards 4 13 Diamonds := Bid (1, Diamonds)
+    //     points 10 27) (cards 5 13 Hearts), Bid (2, Hearts)) ::
+    //     points 10 27) (cards 5 13 Spades), Bid (2, Spades)) ::
+
+        //SA answers
+          points 6 9 & cards 0 3 partnerSuit := Bid (1, SA)  //no trump support
+          points 10 11 & forAllSuits (cards 2 13) := Bid (2, SA)  //sans hand
+          points 12 14 & forAllSuits (cards 2 13) := Bid (3, SA)] //sans hand
+
+    let createAcol:BiddingSystem = Acol1 :: [Acol2]
+
+    let rec fits (cards:Hand) (c:Condition):bool  = 
+        match c with
+        | NCards (min, max, s) -> cardsofSuitinHand cards s >= min && cardsofSuitinHand cards s <= max 
+        | NPoints (min, max) -> pointsinHand cards >= min && pointsinHand cards <= max 
+        | And (p,q) -> fits cards p && fits cards q 
+        | Or (p,q) -> fits cards p || fits cards q 
+
+
+    let rec getBidRule (cards:Hand) (r:RuleSet):Bid =
+        match r with
+        | [] -> Pass // no more rules to apply, Pass
+        | ((c,b) :: t) -> match fits cards c  with
+                            | true -> b  //the condition matches, so bid this bid 
+                            | false -> getBidRule cards (t) //try the remaining rules
+
+    let rec getBid (cards:Hand) (sys:BiddingSystem) (history: BidHistory) (i:int):Bid =
+        match sys with 
+        | [] -> Pass //there is no ruleset given, we do not know what to do so Pass
+        | l -> let f = List.nth sys i //get the ith ruleset, apply it to the history
+               getBidRule cards (f history) 
 

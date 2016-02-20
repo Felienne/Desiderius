@@ -50,6 +50,7 @@
     <Compile Include="Desi.fs" />
     <None Include="App.config" />
     <Compile Include="Acol.fs" />
+    <Compile Include="Game.fs" />
   </ItemGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>

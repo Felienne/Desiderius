@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Desiderius;
 using Microsoft.FSharp.Collections;
 
 namespace PBN
@@ -36,7 +37,7 @@ namespace PBN
             return getStringBetween(input, ":","\"");
         }
 
-        public static Desi.Rank getValuefromChar(char v){
+        public static Desi.Rank getValuefromChar(char v){     
             switch (v)
 	        {
                 case 'A': return Desi.Rank.A;
@@ -54,7 +55,8 @@ namespace PBN
                 case '2': return Desi.Rank.Two;
             }
 
-            return null;
+            return Desi.Rank.Two; //TODO!!! This should be fixed, we could move this to fsharp and use the parse function
+            //if I have figured out how it works
         }
 
         /// <summary>
@@ -67,12 +69,8 @@ namespace PBN
 
         private static Desi.Hand toHand(string handString)
         {
-            //var result = Desi.Hand.Empty;
-
             var result = Desi.makeEmptyHanded;
-                
-             //why does our create emptyhanded not work? It results in null? TODO: Ask Don!
-
+               
             //DECISION! We do represent Empty hands in the list, but they contain an empty list.
 
             if (handString != "-") //no hand given
@@ -115,9 +113,6 @@ namespace PBN
 
 
 
-        static void Main(string[] args)
-        {
-        }
         
 
     }
