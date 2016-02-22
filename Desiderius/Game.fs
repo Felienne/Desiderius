@@ -12,7 +12,7 @@ module helper =
 
 module Player =
 
-   type T = {Direction : Desi.Player; Hand : Desi.Hand}
+   type T = {Direction : Desi.Direction; Hand : Desi.Hand}
 
    let create d h = 
       {Direction = d; Hand = h}
@@ -51,14 +51,23 @@ module Player =
 
 
 
-module Game = 
 
-   type T = {Trump : Desi.Suit}
+module Deal = 
+   type T = {Players: Player.T List}
+   let create players = {Players = players}
+
+module ContractGame = 
+
+   type T = {Trump : Desi.Suit; Players: Player.T List}
 
    let emptyHistory: List<List<Desi.Card>> = List.empty
 
-   let create trump = 
-      {Trump = trump}
+   let emptyPlayers : Player.T List = List.empty
+
+   let create trump players = 
+      {Trump = trump; Players = players}
+
+
 
    let winningCard {Trump=trump} (trick: List<Desi.Card>):Desi.Card =
       

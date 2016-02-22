@@ -4,23 +4,23 @@
 //types of the game
 module Desi =
 
-    type Player =  North = 0 | East = 1 | South = 2 | West = 3
+    type Direction =  North = 0 | East = 1 | South = 2 | West = 3
 
-    let playerFromInt (i:int):Player = 
+    let directionFromInt (i:int):Direction = 
        enum i
 
-    let partner(p:Player):Player = 
+    let partner(p:Direction):Direction = 
       let partnerInt = (int p + 2) % 4
       enum partnerInt
 
-    let next(p:Player) = 
+    let next(p:Direction) = 
         match p with
-        | West -> Player.North
-        | East -> Player.South
-        | South -> Player.West
-        | North -> Player.South
+        | West -> Direction.North
+        | East -> Direction.South
+        | South -> Direction.West
+        | North -> Direction.South
 
-    type Dealer = Dealer of Player 
+    type Dealer = Dealer of Direction 
 
     type Rank = A = 14 | K = 13 | Q = 12 | J = 11 | T = 10 | Nine = 9 | Eight = 8 | Seven = 7 | Six = 6 | Five = 5 | Four = 4 | Three = 3 | Two = 2
 
@@ -29,7 +29,7 @@ module Desi =
     type Card = Card of Suit * Rank
 
     type Hand = 
-        Hand of list<Card>
+        Hand of Card List
         | Empty
 
     type Deal = Deal of Dealer * list<Hand> 
@@ -48,10 +48,10 @@ module Desi =
         match c with
         | Card (s,v) -> 
             match v with
-            | A -> 4
-            | K -> 3
-            | Q -> 2
-            | J -> 1
+            | Rank.A -> 4
+            | Rank.K -> 3
+            | Rank.Q -> 2
+            | Rank.J -> 1
             | _ -> 0
 
     let pointsinHand(h:Hand): int = 
@@ -136,7 +136,7 @@ module Desi =
           //do we support the natively or just with a fun?
 
           //we bid five in order of hight to low, if there is a 6 in there (and the hard is not too strong), we also bid the highest
-          points 15 17 & cards 5 13 Spades := Bid (1, Spades) 
+          points 12 19 & cards 5 13 Spades := Bid (1, Spades) 
 
           points 12 19 & cards 5 13 Clubs := Bid (1, Clubs) 
           points 12 19 & cards 5 13 Hearts := Bid (1, Hearts)

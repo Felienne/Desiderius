@@ -22,11 +22,11 @@ namespace Desi_tests
       private Desi.Card eigthOfHearts = Desi.Card.NewCard(Desi.Suit.Hearts, Desi.Rank.Eight);
 
       //make shorthand games for the four trumpColors
-      private Desiderius.Game.T spadesGame = Desiderius.Game.create(Desi.Suit.Spades);
-      private Desiderius.Game.T heartsGame = Desiderius.Game.create(Desi.Suit.Hearts);
-      private Desiderius.Game.T diamondsGame = Desiderius.Game.create(Desi.Suit.Diamonds);
-      private Desiderius.Game.T clubsGame = Desiderius.Game.create(Desi.Suit.Clubs);
-      private Desiderius.Game.T SAGame = Desiderius.Game.create(Desi.Suit.SA); 
+      private Desiderius.ContractGame.T spadesGame = Desiderius.ContractGame.create(Desi.Suit.Spades, Desiderius.ContractGame.emptyPlayers);
+      private Desiderius.ContractGame.T heartsGame = Desiderius.ContractGame.create(Desi.Suit.Hearts, Desiderius.ContractGame.emptyPlayers);
+      private Desiderius.ContractGame.T diamondsGame = Desiderius.ContractGame.create(Desi.Suit.Diamonds, Desiderius.ContractGame.emptyPlayers);
+      private Desiderius.ContractGame.T clubsGame = Desiderius.ContractGame.create(Desi.Suit.Clubs, Desiderius.ContractGame.emptyPlayers);
+      private Desiderius.ContractGame.T SAGame = Desiderius.ContractGame.create(Desi.Suit.SA, Desiderius.ContractGame.emptyPlayers); 
 
       [TestMethod]
       public void allTrumpsHighestWins()
@@ -35,7 +35,7 @@ namespace Desi_tests
          var trick = new List<Desi.Card>() {aceOfSpades,twoOfSpades,queenOfSpades,eigthOfSpades};
          var fsharpTrick = ListModule.OfSeq(trick);
 
-         var winningCard = Desiderius.Game.winningCard(spadesGame, fsharpTrick);
+         var winningCard = Desiderius.ContractGame.winningCard(spadesGame, fsharpTrick);
          Assert.AreEqual(aceOfSpades, winningCard);
 
       }
@@ -47,7 +47,7 @@ namespace Desi_tests
          var trick = new List<Desi.Card>() { aceOfSpades, twoOfSpades, queenOfSpades, eigthOfSpades };
          var fsharpTrick = ListModule.OfSeq(trick);
 
-         var winningCard = Desiderius.Game.winningCard(clubsGame, fsharpTrick);
+         var winningCard = Desiderius.ContractGame.winningCard(clubsGame, fsharpTrick);
          Assert.AreEqual(aceOfSpades, winningCard);
       }
 
@@ -58,7 +58,7 @@ namespace Desi_tests
          var trick = new List<Desi.Card>() { aceOfHearts, twoOfSpades, queenOfHearts, eigthOfHearts };
          var fsharpTrick = ListModule.OfSeq(trick);
 
-         var winningCard = Desiderius.Game.winningCard(spadesGame, fsharpTrick);
+         var winningCard = Desiderius.ContractGame.winningCard(spadesGame, fsharpTrick);
          Assert.AreEqual(twoOfSpades, winningCard);
 
       }
@@ -70,7 +70,7 @@ namespace Desi_tests
          var trick = new List<Desi.Card>() { twoOfHearts, twoOfSpades, queenOfHearts, eigthOfHearts };
          var fsharpTrick = ListModule.OfSeq(trick);
 
-         var winningCard = Desiderius.Game.winningCard(SAGame, fsharpTrick);
+         var winningCard = Desiderius.ContractGame.winningCard(SAGame, fsharpTrick);
          Assert.AreEqual(queenOfHearts, winningCard);
 
       }
@@ -82,7 +82,7 @@ namespace Desi_tests
          var trick = new List<Desi.Card>() { twoOfHearts, twoOfSpades, queenOfHearts, aceOfSpades };
          var fsharpTrick = ListModule.OfSeq(trick);
 
-         var winningCard = Desiderius.Game.winningCard(SAGame, fsharpTrick);
+         var winningCard = Desiderius.ContractGame.winningCard(SAGame, fsharpTrick);
          Assert.AreEqual(queenOfHearts, winningCard);
 
       }

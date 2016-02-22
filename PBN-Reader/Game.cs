@@ -17,37 +17,39 @@ namespace PBN_Reader
       static void Main(string[] args)
       {
          string deal = "[Deal \"N:A25.63.AKQ987.A97 A8.KQ.T.QJT J97.J987.3.K KQT.AT.J.\"]";
-         var hands = PBN.Reader.getHandList(deal);
-         var dealer = PBN.Reader.getDealer(deal);
+         var hands = Desiderius.PBN.getHandList(deal);
+         var dealer = Desiderius.PBN.getDealer(deal);
 
          var players = new List<Desiderius.Player.T>(4);
 
 
          for (int i = 0; i < players.Capacity; i++)
          {
-            var firstHand = hands[i];
-            Desi.Player Direction = Desi.playerFromInt(i);
+            //var firstHand = hands[i];
+            var Direction = Desi.directionFromInt(i);
 
-            players.Add(Desiderius.Player.create(Direction, firstHand));
+            //players.Add(Desiderius.Player.create(Direction, firstHand));
          }
 
-         Console.WriteLine("Your cards are {0}", Desi.showHand(hands[0]));
+         //Console.WriteLine("Your cards are {0}", Desi.showHand(hands[0]));
 
          Console.WriteLine("What is your bid?");
 
          string bid = Console.ReadLine();
 
-         Desiderius.Game.T game = Desiderius.Game.create(Desi.Suit.Spades);
+         var fsharpPlayers = ListModule.OfSeq(players);
+         Desiderius.ContractGame.T game = Desiderius.ContractGame.create(Desi.Suit.Spades, fsharpPlayers);
+
 
          switch (bid)
          {
-            case "S": game = Desiderius.Game.create(Desi.Suit.Spades);
+            case "S": game = Desiderius.ContractGame.create(Desi.Suit.Spades, fsharpPlayers);
                         break;
-            case "H": game = Desiderius.Game.create(Desi.Suit.Hearts);
+            case "H": game = Desiderius.ContractGame.create(Desi.Suit.Hearts, fsharpPlayers);
                         break;
-            case "D": game = Desiderius.Game.create(Desi.Suit.Diamonds);
+            case "D": game = Desiderius.ContractGame.create(Desi.Suit.Diamonds, fsharpPlayers);
                         break;
-            case "C": game = Desiderius.Game.create(Desi.Suit.Spades);
+            case "C": game = Desiderius.ContractGame.create(Desi.Suit.Spades, fsharpPlayers);
                         break;
          }
 

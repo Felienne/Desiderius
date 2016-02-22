@@ -51,6 +51,7 @@
     <None Include="App.config" />
     <Compile Include="Acol.fs" />
     <Compile Include="Game.fs" />
+    <Compile Include="PBN.fs" />
   </ItemGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>
