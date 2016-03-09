@@ -54,6 +54,10 @@ module Desi =
             | Rank.J -> 1
             | _ -> 0
 
+    let cardsinHand (h:Hand) = 
+        match h with
+        | Hand list -> list
+
     let pointsinHand(h:Hand): int = 
         match h with
         | Hand list -> List.fold (+) 0 (List.map cardtoPoint list)

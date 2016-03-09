@@ -8,9 +8,6 @@ using Microsoft.FSharp.Collections;
 
 namespace PBN_Reader
 {
-
-
-
     class PlayingAgent
     {
 
