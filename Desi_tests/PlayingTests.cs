@@ -27,10 +27,10 @@ namespace Desi_tests
       private Desi.Card eigthOfHearts = Desi.Card.NewCard(Desi.Suit.Hearts, Desi.Rank.Eight);
 
       //make shorthand games for the four trumpColors
-      private Desiderius.ContractGame.T spadesGame = Desiderius.ContractGame.create(Desi.Suit.Spades, Desiderius.ContractGame.emptyPlayers);
-      private Desiderius.ContractGame.T heartsGame = Desiderius.ContractGame.create(Desi.Suit.Hearts, Desiderius.ContractGame.emptyPlayers);
-      private Desiderius.ContractGame.T diamondsGame = Desiderius.ContractGame.create(Desi.Suit.Diamonds, Desiderius.ContractGame.emptyPlayers);
-      private Desiderius.ContractGame.T clubsGame = Desiderius.ContractGame.create(Desi.Suit.Clubs, Desiderius.ContractGame.emptyPlayers);
+      private Desiderius.ContractGame.T SpadesGame = Desiderius.ContractGame.create(Desi.Suit.Spades, Desiderius.ContractGame.emptyPlayers);
+      private Desiderius.ContractGame.T HeartsGame = Desiderius.ContractGame.create(Desi.Suit.Hearts, Desiderius.ContractGame.emptyPlayers);
+      private Desiderius.ContractGame.T DiamondsGame = Desiderius.ContractGame.create(Desi.Suit.Diamonds, Desiderius.ContractGame.emptyPlayers);
+      private Desiderius.ContractGame.T  ClubsGame = Desiderius.ContractGame.create(Desi.Suit.Clubs, Desiderius.ContractGame.emptyPlayers);
       private Desiderius.ContractGame.T SAGame = Desiderius.ContractGame.create(Desi.Suit.SA, Desiderius.ContractGame.emptyPlayers); 
 
 
@@ -41,7 +41,7 @@ namespace Desi_tests
          var trick = new List<Desi.Card>() {aceOfSpades,twoOfSpades,queenOfSpades,eigthOfSpades};
          var fsharpTrick = ListModule.OfSeq(trick);
 
-         var winningCard = Desiderius.ContractGame.winningCard(spadesGame, fsharpTrick);
+         var winningCard = Desiderius.ContractGame.winningCard(SpadesGame, fsharpTrick);
          Assert.AreEqual(aceOfSpades, winningCard);
 
       }
@@ -53,7 +53,7 @@ namespace Desi_tests
          var trick = new List<Desi.Card>() { aceOfSpades, twoOfSpades, queenOfSpades, eigthOfSpades };
          var fsharpTrick = ListModule.OfSeq(trick);
 
-         var winningCard = Desiderius.ContractGame.winningCard(clubsGame, fsharpTrick);
+         var winningCard = Desiderius.ContractGame.winningCard(ClubsGame, fsharpTrick);
          Assert.AreEqual(aceOfSpades, winningCard);
       }
 
@@ -64,7 +64,7 @@ namespace Desi_tests
          var trick = new List<Desi.Card>() { aceOfHearts, twoOfSpades, queenOfHearts, eigthOfHearts };
          var fsharpTrick = ListModule.OfSeq(trick);
 
-         var winningCard = Desiderius.ContractGame.winningCard(spadesGame, fsharpTrick);
+         var winningCard = Desiderius.ContractGame.winningCard(SpadesGame, fsharpTrick);
          Assert.AreEqual(twoOfSpades, winningCard);
 
       }

@@ -81,7 +81,7 @@ module ContractGame =
       | h :: t when List.length h = 3 -> //add the last card and start a new one*
          [] :: (card :: h) :: t
 
-      | h :: t -> //get the trick and add to it
+      | h :: t -> //in all other cases, get the trick and add to it
           (card :: h) :: t
 
       //* this is used to make the play logiv simpler, we can now always get the

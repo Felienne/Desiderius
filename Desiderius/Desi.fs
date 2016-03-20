@@ -24,7 +24,7 @@ module Desi =
 
     type Rank = A = 14 | K = 13 | Q = 12 | J = 11 | T = 10 | Nine = 9 | Eight = 8 | Seven = 7 | Six = 6 | Five = 5 | Four = 4 | Three = 3 | Two = 2
 
-    type Suit = Spades | Hearts | Diamonds | Clubs | SA 
+    type Suit = Spades = 4 | Hearts = 3 | Diamonds = 2 | Clubs = 1| SA = 5
 
     type Card = Card of Suit * Rank
 
@@ -103,19 +103,19 @@ module Desi =
     let (:=) (p:Condition)(b:Bid):Condition*Bid = 
         (p,b)
 
-    let both (p:Condition)(q: Condition):Condition = //added because  And (NPoints (12,19, Spades), NCards (4,13,Spades)) had too much brackets. Was first called makeAnd, but both is nicer
+    let both (p:Condition)(q: Condition):Condition = //added because  And (NPoints (12,19, Suit.Spades), NCards (4,13,Suit.Spades)) had too much brackets. Was first called makeAnd, but both is nicer
         And (p,q)
 
-    let either (p:Condition)(q: Condition):Condition = //added because  And (NPoints (12,19, Spades), NCards (4,13,Spades)) had too much brackets. Was first called makeAnd, but both is nicer
+    let either (p:Condition)(q: Condition):Condition = //added because  And (NPoints (12,19, Suit.Spades), NCards (4,13,Suit.Spades)) had too much brackets. Was first called makeAnd, but both is nicer
         Or (p,q)
 
-    let all (p:Condition)(q: Condition)(r:Condition):Condition = //added because  And (NPoints (12,19, Spades), NCards (4,13,Spades)) had even more brackets.
+    let all (p:Condition)(q: Condition)(r:Condition):Condition = //added because  And (NPoints (12,19, Suit.Spades), NCards (4,13,Suit.Spades)) had even more brackets.
         And(And(p,q),r)
 
 
     let forAllSuits (p:Suit -> Condition): Condition = 
-        both (both (p Clubs) (p Diamonds))
-            (both (p Spades) (p Hearts))
+        both (both (p Suit.Clubs) (p Suit.Diamonds))
+            (both (p Suit.Spades) (p Suit.Hearts))
 
     let points (min:int) (max:int) = //same as above
         NPoints (min, max)
@@ -134,23 +134,23 @@ module Desi =
 
     let Acol1(hist:BidHistory):RuleSet =
 
-        [ points 15 17 & forAllSuits (cards 2 13) := Bid (1, SA)      
+        [ points 15 17 & forAllSuits (cards 2 13) := Bid (1, Suit.SA)      
           //if possible, we always prefer to open 1SA
           //opening 1SA interesting question: do we want/need universal quantifiers? For all colors > 2
           //do we support the natively or just with a fun?
 
           //we bid five in order of hight to low, if there is a 6 in there (and the hard is not too strong), we also bid the highest
-          points 12 19 & cards 5 13 Spades := Bid (1, Spades) 
+          points 12 19 & cards 5 13 Suit.Spades := Bid (1, Suit.Spades) 
 
-          points 12 19 & cards 5 13 Clubs := Bid (1, Clubs) 
-          points 12 19 & cards 5 13 Hearts := Bid (1, Hearts)
-          points 12 19 & cards 5 13 Diamonds:= Bid (1, Diamonds)
+          points 12 19 & cards 5 13 Suit.Clubs := Bid (1, Suit.Clubs) 
+          points 12 19 & cards 5 13 Suit.Hearts := Bid (1, Suit.Hearts)
+          points 12 19 & cards 5 13 Suit.Diamonds:= Bid (1, Suit.Diamonds)
 
           //we bid four in order of low to high
-          points 12 19 & cards 4 13 Clubs := Bid (1, Clubs) 
-          points 12 19 & cards 4 13 Diamonds := Bid (1, Diamonds) 
-          points 12 19 & cards 4 13 Hearts := Bid (1, Hearts) 
-          points 12 19 & cards 4 13 Spades := Bid (1, Spades)]
+          points 12 19 & cards 4 13 Suit.Clubs := Bid (1, Suit.Clubs) 
+          points 12 19 & cards 4 13 Suit.Diamonds := Bid (1, Suit.Diamonds) 
+          points 12 19 & cards 4 13 Suit.Hearts := Bid (1, Suit.Hearts) 
+          points 12 19 & cards 4 13 Suit.Spades := Bid (1, Suit.Spades)]
 
 
     let Acol2(hist:BidHistory):RuleSet = 
@@ -168,14 +168,14 @@ module Desi =
         | Bid (partnerValue, partnerSuit) ->
 
         //double jump is preemptive
-        [ points 6 9 & cards 7 13 Diamonds := Bid (3, Diamonds) 
-          points 6 9 & cards 7 13 Hearts := Bid (3, Hearts)
-          points 6 9 & cards 7 13 Spades := Bid (3, Spades)
+        [ points 6 9 & cards 7 13 Suit.Diamonds := Bid (3, Suit.Diamonds) 
+          points 6 9 & cards 7 13 Suit.Hearts := Bid (3, Suit.Hearts)
+          points 6 9 & cards 7 13 Suit.Spades := Bid (3, Suit.Spades)
 
         //single jump is 6 card and strong hand
-          points 13 27 & cards 6 13 Diamonds := Bid (2, Diamonds)
-          points 13 27 & cards 6 13 Hearts := Bid (2, Hearts) 
-          points 13 27 & cards 6 13 Spades := Bid (2, Spades) 
+          points 13 27 & cards 6 13 Suit.Diamonds := Bid (2, Suit.Diamonds)
+          points 13 27 & cards 6 13 Suit.Hearts := Bid (2, Suit.Hearts) 
+          points 13 27 & cards 6 13 Suit.Spades := Bid (2, Suit.Spades) 
 
         //answer opening suit
           points 6 9 & cards 4 13 partnerSuit := raise partnerBid 1
@@ -184,14 +184,13 @@ module Desi =
 
         //bid new color if it can be bid on the one level
         //---> we need a comparison operatior now
-          points 6 9 & cards 4 13 Diamonds := Bid (1, Diamonds)
-    //     points 10 27) (cards 5 13 Hearts), Bid (2, Hearts)) ::
-    //     points 10 27) (cards 5 13 Spades), Bid (2, Spades)) ::
+          points 6 9 & cards 4 13 Suit.Diamonds := Bid (1, Suit.Diamonds)
+
 
         //SA answers
-          points 6 9 & cards 0 3 partnerSuit := Bid (1, SA)  //no trump support
-          points 10 11 & forAllSuits (cards 2 13) := Bid (2, SA)  //sans hand
-          points 12 14 & forAllSuits (cards 2 13) := Bid (3, SA)] //sans hand
+          points 6 9 & cards 0 3 partnerSuit := Bid (1, Suit.SA)  //no trump support
+          points 10 11 & forAllSuits (cards 2 13) := Bid (2, Suit.SA)  //sans hand
+          points 12 14 & forAllSuits (cards 2 13) := Bid (3, Suit.SA)] //sans hand
 
     let createAcol:BiddingSystem = Acol1 :: [Acol2]
 

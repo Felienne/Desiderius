@@ -10,19 +10,21 @@ namespace Desi_tests
     [TestClass]
     public class BiddingTests
     {
-       //define some shorthand vars for cards as they are needed in many tests.
-       private Desi.Card aceOfSpades = Desi.Card.NewCard(Desi.Suit.Spades, Desi.Rank.A);
-       private Desi.Card kingOfSpades = Desi.Card.NewCard(Desi.Suit.Spades, Desi.Rank.K);
-       private Desi.Card twoOfSpades = Desi.Card.NewCard(Desi.Suit.Spades, Desi.Rank.Two);
-       private Desi.Card queenOfSpades = Desi.Card.NewCard(Desi.Suit.Spades, Desi.Rank.Q);
-       private Desi.Card eigthOfSpades = Desi.Card.NewCard(Desi.Suit.Spades, Desi.Rank.Eight);
 
-       private Desi.Card aceOfHearts = Desi.Card.NewCard(Desi.Suit.Hearts, Desi.Rank.A);
-       private Desi.Card twoOfHearts = Desi.Card.NewCard(Desi.Suit.Hearts, Desi.Rank.Two);
-       private Desi.Card queenOfHearts = Desi.Card.NewCard(Desi.Suit.Hearts, Desi.Rank.Q);
-       private Desi.Card eigthOfHearts = Desi.Card.NewCard(Desi.Suit.Hearts, Desi.Rank.Eight);
+        private Desi.Card aceOfSpades = Desi.Card.NewCard(Desi.Suit.Spades, Desi.Rank.A);
+        private Desi.Card kingOfSpades = Desi.Card.NewCard(Desi.Suit.Spades, Desi.Rank.K);
+        private Desi.Card queenOfSpades = Desi.Card.NewCard(Desi.Suit.Spades, Desi.Rank.Q);
+        private Desi.Card eigthOfSpades = Desi.Card.NewCard(Desi.Suit.Spades, Desi.Rank.Eight);
 
-       private Desi.Card twoOfClubs = Desi.Card.NewCard(Desi.Suit.Clubs, Desi.Rank.Two);
+        private Desi.Card kingofClubs = Desi.Card.NewCard(Desi.Suit.Clubs, Desi.Rank.K);
+        private Desi.Card twoofClubs = Desi.Card.NewCard(Desi.Suit.Clubs, Desi.Rank.Two);
+        private Desi.Card queenofClubs = Desi.Card.NewCard(Desi.Suit.Clubs, Desi.Rank.Q);
+        private Desi.Card tenOfClubs = Desi.Card.NewCard(Desi.Suit.Clubs, Desi.Rank.A);
+
+        private Desi.Card aceOfHearts = Desi.Card.NewCard(Desi.Suit.Hearts, Desi.Rank.A);
+        private Desi.Card twoOfHearts = Desi.Card.NewCard(Desi.Suit.Hearts, Desi.Rank.Two);
+        private Desi.Card queenOfHearts = Desi.Card.NewCard(Desi.Suit.Hearts, Desi.Rank.Q);
+        private Desi.Card eigthOfHearts = Desi.Card.NewCard(Desi.Suit.Hearts, Desi.Rank.Eight);
 
         public static FSharpList<Desi.Bid> emptyHistory = ListModule.OfSeq(new List<Desi.Bid>());
 
@@ -102,23 +104,23 @@ namespace Desi_tests
          }
 
          [TestMethod]
-         public void getSpadesforAHand()
+         public void SpadesforAHand()
          {
             string deal = "[Deal \"W:KQT2.AT.J6542.85 - A8654.KQ5.T.QJT6 -\"]";
 
-            var expectedSpadesWest = 4;
+             var expectedSpadesWest = 4;
 
             var result = Desiderius.PBN.getHandList(deal);
             var westHand = result[0];
 
-            var spadesWest = Desi.cardsofSuitinHand(westHand, Desi.Suit.Spades);
+            var SpadesWest = Desi.cardsofSuitinHand(westHand, Desi.Suit.Spades);
 
-            Assert.AreEqual(expectedSpadesWest, spadesWest);
+            Assert.AreEqual(expectedSpadesWest, SpadesWest);
 
          }
 
          [TestMethod]
-         public void getClubsforAHand()
+         public void ClubsforAHand()
          {
             string deal = "[Deal \"W:KQT2.AT.J6542.85 - A8654.KQ5.T.QJT6 -\"]";
 
@@ -127,16 +129,16 @@ namespace Desi_tests
             var result = Desiderius.PBN.getHandList(deal);
             var westHand = result[0];
 
-            var clubsWest = Desi.cardsofSuitinHand(westHand, Desi.Suit.Clubs);
+            var ClubsWest = Desi.cardsofSuitinHand(westHand, Desi.Suit.Clubs);
 
-            Assert.AreEqual(expectedClubsWest, clubsWest);
+            Assert.AreEqual(expectedClubsWest, ClubsWest);
 
          }
 
         ////---------------Test for a first bidding system
 
          [TestMethod]
-         public void ACOL_bid_1_spades()
+         public void ACOL_bid_1_Spades()
          {
             string deal = "[Deal \"W:AQT52.AT.KJ6.852 - A8654.KQ5.T.QJT6 -\"]";
             var expectedBid = Desi.Bid.NewBid(1, Desi.Suit.Spades);
@@ -155,7 +157,7 @@ namespace Desi_tests
          }
 
          [TestMethod]
-         public void ACOL_bid_1_clubs_if_also_4_spades()
+         public void ACOL_bid_1_Clubs_if_also_4_Spades()
          {
 
 
@@ -360,7 +362,7 @@ namespace Desi_tests
          //{
          //   string deal = "[Deal \"N:.63.AKQ98.A9732 AK86.KQ5.T.QJT6 J973.J98742.3.K4 QT254.AT.J6542.85\"]";
 
-         //   var expectedBid = Desi.Bid.Pass; //North opens, so even though East has 4 spades and 15 points, he does not open 1 of Spades
+         //   var expectedBid = Desi.Bid.Pass; //North opens, so even though East has 4 Suit.Spades and 15 points, he does not open 1 of Suit.Spades
 
          //   var result = Desiderius.PBN.getHandList(deal);
          //   var eastHand = result[1];
