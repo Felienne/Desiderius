@@ -24,7 +24,7 @@ module Desi =
 
     type Rank = A = 14 | K = 13 | Q = 12 | J = 11 | T = 10 | Nine = 9 | Eight = 8 | Seven = 7 | Six = 6 | Five = 5 | Four = 4 | Three = 3 | Two = 2
 
-    type Suit = Spades = 4 | Hearts = 3 | Diamonds = 2 | Clubs = 1| SA = 5
+    type Suit = SA = 5 | Spades = 4 | Hearts = 3 | Diamonds = 2 | Clubs = 1 
 
     type Card = Card of Suit * Rank
 
@@ -96,6 +96,7 @@ module Desi =
         | NPoints of int * int //min, max
         | And of Condition * Condition
         | Or of Condition * Condition
+        | If of bool
 
     let (&) (p:Condition)(q: Condition):Condition = 
         And (p,q)
@@ -167,8 +168,14 @@ module Desi =
         match partnerBid with
         | Bid (partnerValue, partnerSuit) ->
 
+        //Jackoby 
+        [ If (partnerBid = Bid (1,Suit.SA)) & points 6 9 & cards 5 13 Suit.Hearts := Bid (2, Suit.Diamonds)
+          If (partnerBid = Bid (1,Suit.SA)) & points 6 9 & cards 5 13 Suit.Spades := Bid (2, Suit.Hearts)
+
+        //next up: Staymen
+
         //double jump is preemptive
-        [ points 6 9 & cards 7 13 Suit.Diamonds := Bid (3, Suit.Diamonds) 
+          points 6 9 & cards 7 13 Suit.Diamonds := Bid (3, Suit.Diamonds) 
           points 6 9 & cards 7 13 Suit.Hearts := Bid (3, Suit.Hearts)
           points 6 9 & cards 7 13 Suit.Spades := Bid (3, Suit.Spades)
 
@@ -183,11 +190,11 @@ module Desi =
           points 12 15 & cards 4 13 partnerSuit := raise partnerBid 3
 
         //bid new color if it can be bid on the one level
-        //---> we need a comparison operatior now
-          points 6 9 & cards 4 13 Suit.Diamonds := Bid (1, Suit.Diamonds)
+          If (partnerSuit < Suit.Diamonds) & points 6 9 & cards 4 13 Suit.Diamonds := Bid (1, Suit.Diamonds)
+          If (partnerSuit < Suit.Hearts) & points 6 9 & cards 4 13 Suit.Hearts := Bid (1, Suit.Hearts)
+          If (partnerSuit < Suit.Spades) & points 6 9 & cards 4 13 Suit.Spades := Bid (1, Suit.Spades)
 
-
-        //SA answers
+        //answer with SA
           points 6 9 & cards 0 3 partnerSuit := Bid (1, Suit.SA)  //no trump support
           points 10 11 & forAllSuits (cards 2 13) := Bid (2, Suit.SA)  //sans hand
           points 12 14 & forAllSuits (cards 2 13) := Bid (3, Suit.SA)] //sans hand
@@ -200,6 +207,7 @@ module Desi =
         | NPoints (min, max) -> pointsinHand cards >= min && pointsinHand cards <= max 
         | And (p,q) -> fits cards p && fits cards q 
         | Or (p,q) -> fits cards p || fits cards q 
+        | If b -> b 
 
 
     let rec getBidRule (cards:Hand) (r:RuleSet):Bid =

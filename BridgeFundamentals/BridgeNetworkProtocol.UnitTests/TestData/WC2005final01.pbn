@@ -1,0 +1,1052 @@
+[Event "Computer-Bridge Championship Final 01-16"]
+[Site ""]
+[Date "2005.10.29"]
+[BOARD "1"]
+[Dealer "N"]
+[Vulnerable "None"]
+[Deal "N:AQJ643.A.J4.QJ64 K7.KQJT85.AKQ5.A T852.962.T863.K7 9.743.972.T98532"]
+[North "WBridge5"]
+[East "Jack"]
+[South "WBridge5"]
+[West "Jack"]
+[Declarer "E"]
+[Contract "5H"]
+[Result "11"]
+[Score "NS -450"]
+[Auction "N"]
+ 1S    X   3S  PASS 
+ 4S   5H  PASS PASS 
+PASS                
+[Play "S"]
+S5 S9 SA S7 
+C7 C2 CQ CA 
+H2 H3 HA HT 
+CK C3 C4 H5 
+H6 H4 D4 HJ 
+D6 D2 DJ DQ 
+D3 D7 C6 DK 
+S2 C5 S3 SK 
+D8 D9 S4 DA 
+DT H7 S6 D5 
+S8 CT CJ HQ 
+H9 C8 SJ HK 
+ST C9 SQ H8 
+ 
+[Event "#"]
+[BOARD "2"]
+[Dealer "E"]
+[Date "2005.10.29"]
+[North "WBridge5"]
+[East "Jack"]
+[South "WBridge5"]
+[West "Jack"]
+[Vulnerable "NS"]
+[Deal "N:754.AJT732.KT9.T J82.KQ64.QJ6.K64 AT963.8.A2.Q9852 KQ.95.87543.AJ73"]
+[Declarer "S"]
+[Contract "3S"]
+[Result "8"]
+[Score "NS -100"]
+[Auction "E"]
+PASS  1S  PASS  2H  
+PASS  2S  PASS  3S  
+PASS PASS PASS      
+[Play "W"]
+D3 D9 DJ DA 
+H5 HA H4 H8 
+CJ CT C4 C2 
+SQ S4 S2 SA 
+C3 S5 C6 CQ 
+H9 H2 H6 S6 
+CA S7 CK C9 
+SK HJ HQ ST 
+D8 DT DQ D2 
+D4 H3 SJ S3 
+D5 H7 HK C5 
+C7 DK S8 S9 
+D7 HT D6 C8 
+
+[Event "#"]
+[BOARD "3"]
+[Dealer "S"]
+[Date "2005.10.29"]
+[North "WBridge5"]
+[East "Jack"]
+[South "WBridge5"]
+[West "Jack"]
+[Vulnerable "EW"]
+[Deal "N:A82.K8632.AK.KJ6 J73.J.QJ9872.Q72 QT9.Q97.65.AT954 K654.AT54.T43.83"]
+[Declarer "N"]
+[Contract "4H"]
+[Result "11"]
+[Score "NS 450"]
+[Auction "S"]
+PASS PASS  1H  PASS 
+ 2H  PASS  4H  PASS 
+PASS PASS           
+[Play "E"]
+DQ D5 D3 DA 
+D2 D6 D4 DK 
+HJ HQ H4 H3 
+D7 H9 HA H2 
+D8 H7 DT S2 
+C2 C4 C3 CK 
+D9 S9 H5 HK 
+C7 C5 C8 CJ 
+DJ C9 HT H8 
+S3 ST S4 SA 
+CQ CA S5 C6 
+S7 CT S6 S8 
+SJ SQ SK H6 
+ 
+[Event "#"]
+[BOARD "4"]
+[Dealer "W"]
+[Date "2005.10.29"]
+[North "WBridge5"]
+[East "Jack"]
+[South "WBridge5"]
+[West "Jack"]
+[Vulnerable "Both"]
+[Deal "N:KJ95.T54.85.A642 Q42.QJ986.JT.QJ8 A63.A32.KQ63.K53 T87.K7.A9742.T97"]
+[Declarer "N"]
+[Contract "2S"]
+[Result "8"]
+[Score "NS 110"]
+[Auction "W"]
+PASS PASS  2H    X  
+PASS  2S  PASS PASS 
+PASS                
+[Play "E"]
+HQ HA HK H5 
+S2 S3 S7 SK 
+DT DQ DA D5 
+HJ H2 H7 HT 
+H9 H3 C7 H4 
+DJ DK D2 D8 
+SQ D3 D4 S5 
+S4 S6 ST SJ 
+C8 CK C9 C2 
+CJ C3 CT CA 
+CQ C5 D7 C4 
+H8 D6 S8 S9 
+H6 SA D9 C6 
+ 
+[Event "#"]
+[BOARD "5"]
+[Dealer "N"]
+[Date "2005.10.29"]
+[North "WBridge5"]
+[East "Jack"]
+[South "WBridge5"]
+[West "Jack"]
+[Vulnerable "NS"]
+[Deal "N:JT4.KJT9853.Q.J6 K952.A.KJ85.9743 763.Q42.T9762.AT AQ8.76.A43.KQ852"]
+
+[Declarer "E"]
+[Contract "4S"]
+[Result "11"]
+[Score "NS -450"]
+[Auction "N"]
+ 3H  PASS PASS   X  
+PASS  4S  PASS PASS 
+PASS                
+[Play "S"]
+H2 H6 H8 HA 
+D2 D3 DQ DJ 
+H4 H7 H3 S2 
+CT CQ C6 C3 
+S3 S8 S4 SK 
+CA C2 CJ C4 
+D6 D4 H5 D8 
+S6 SQ ST S5 
+S7 SA SJ S9 
+HQ C5 H9 C7 
+D7 C8 HT C9 
+D9 DA HJ D5 
+DT CK HK DK 
+ 
+[Event "#"]
+[BOARD "6"]
+[Dealer "E"]
+[Date "2005.10.29"]
+[North "WBridge5"]
+[East "Jack"]
+[South "WBridge5"]
+[West "Jack"]
+[Vulnerable "EW"]
+[Deal "N:K4.AJ94.Q32.KQJ2 76.K.A765.A98643 QJT2.T532.KJT.T5 A9853.Q876.984.7"]
+[Declarer "S"]
+[Contract "3H"]
+[Result "8"]
+[Score "NS -50"]
+[Auction "E"]
+ 1C  PASS  1S    X  
+ 2C   2H  PASS  3H  
+PASS PASS PASS      
+[Play "W"]
+C7 C2 CA C5 
+H6 CJ C9 CT 
+D9 DQ DA DJ 
+D4 D2 D7 DK 
+H7 HA HK H3 
+HQ H9 C3 H2 
+D8 D3 D5 DT 
+H8 HJ C4 H5 
+S3 CK C6 HT 
+S5 SK S6 S2 
+S8 CQ C8 SQ 
+S9 H4 D6 SJ 
+SA S4 S7 ST 
+ 
+[Event "#"]
+[BOARD "7"]
+[Dealer "S"]
+[Date "2005.10.29"]
+[North "WBridge5"]
+[East "Jack"]
+[South "WBridge5"]
+[West "Jack"]
+[Vulnerable "Both"]
+[Deal "N:AT943.J2.43.AKT5 87.T73.AQ98.QJ83 J.AK98654.K752.4 KQ652.Q.JT6.9762"]
+[Declarer "S"]
+[Contract "4H"]
+[Result "11"]
+[Score "NS 650"]
+[Auction "S"]
+ 4H  PASS PASS PASS 
+[Play "W"]
+DJ D3 DA D2 
+D6 D4 D8 DK 
+HQ H2 H3 HA 
+SQ SA S7 SJ 
+S2 ST S8 H9 
+DT HJ D9 D7 
+C2 CA C3 C4 
+C6 CK C8 D5 
+S5 S4 CJ H6 
+S6 C5 H7 HK 
+C7 CT HT H8 
+C9 S3 CQ H5 
+SK S9 DQ H4 
+ 
+[Event "#"]
+[BOARD "8"]
+[Dealer "W"]
+[Date "2005.10.29"]
+[North "WBridge5"]
+[East "Jack"]
+[South "WBridge5"]
+[West "Jack"]
+[Vulnerable "None"]
+[Deal "N:KT.AQ9874.864.52 QJ76.62.QT.J9864 9432..AK9732.AKT A85.KJT53.J5.Q73"]
+[Declarer "N"]
+[Contract "3NT"]
+[Result "9"]
+[Score "NS 400"]
+[Auction "W"]
+PASS  2H  PASS  3D  
+PASS  3NT PASS PASS 
+PASS                
+[Play "E"]
+C4 CK C3 C2 
+DT DA D5 D4 
+DQ DK DJ D6 
+H2 D2 H3 D8 
+H6 CT H5 HA 
+C6 CA CQ C5 
+S6 D3 S5 H9 
+C8 D9 S8 H8 
+S7 D7 HT H7 
+SJ S9 SA ST 
+SQ S2 HK H4 
+C9 S3 C7 HQ 
+CJ S4 HJ SK 
+ 
+[Event "#"]
+[BOARD "9"]
+[Dealer "N"]
+[Date "2005.10.29"]
+[North "WBridge5"]
+[East "Jack"]
+[South "WBridge5"]
+[West "Jack"]
+[Vulnerable "EW"]
+[Deal "N:AKQ.AJT.KQ6.J763 9875.Q963.54.A95 T432.75.AT97.K42 J6.K842.J832.QT8"]
+[Declarer "N"]
+[Contract "3NT"]
+[Result "9"]
+[Score "NS 400"]
+[Auction "N"]
+ 2NT PASS  3C  PASS 
+ 3D  PASS  3NT PASS 
+PASS PASS           
+[Play "E"]
+S7 S2 SJ SA 
+D4 D7 D2 DK 
+D5 D9 D3 DQ 
+S5 S3 S6 SK 
+S8 S4 H2 SQ 
+H3 DA D8 D6 
+S9 ST H4 C7 
+C5 C2 C8 C3 
+C9 DT DJ C6 
+H6 H5 HK HA 
+HQ H7 H8 HJ 
+H9 C4 CT HT 
+CA CK CQ CJ 
+ 
+[Event "#"]
+[BOARD "10"]
+[Dealer "E"]
+[Date "2005.10.29"]
+[North "WBridge5"]
+[East "Jack"]
+[South "WBridge5"]
+[West "Jack"]
+[Vulnerable "Both"]
+[Deal "N:K964.97.AK32.974 T.T653.QJT64.AJ6 Q532.AKJ84.95.Q2 AJ87.Q2.87.KT853"]
+[Declarer "N"]
+[Contract "4S"]
+[Result "8"]
+[Score "NS -200"]
+[Auction "E"]
+PASS  1H  PASS  1S  
+PASS  2S  PASS  4S  
+PASS PASS PASS      
+[Play "E"]
+DQ D5 D8 DA 
+H3 HK H2 H7 
+D4 D9 D7 DK 
+H5 HA HQ H9 
+ST S2 SA S4 
+CA CQ C3 C4 
+CJ C2 C5 C7 
+DJ S3 SJ D3 
+D6 SQ S7 S6 
+H6 H4 C8 SK 
+C6 S5 CT C9 
+HT H8 S8 D2 
+DT HJ CK S9 
+ 
+[Event "#"]
+[BOARD "11"]
+[Dealer "S"]
+[Date "2005.10.29"]
+[North "WBridge5"]
+[East "Jack"]
+[South "WBridge5"]
+[West "Jack"]
+[Vulnerable "None"]
+[Deal "N:KQT.J5.K942.QT98 932.A972.A8765.J AJ6.KQT3.QJ3.K52 8754.864.T.A7643"]
+[Declarer "S"]
+[Contract "3NT"]
+[Result "10"]
+[Score "NS 430"]
+[Auction "S"]
+ 1NT PASS  3NT PASS 
+PASS PASS           
+[Play "W"]
+S5 ST S9 S6 
+DT D2 DA D3 
+H6 HJ H2 H3 
+C3 D4 D5 DQ 
+C4 CQ CJ C2 
+CA CT S2 C5 
+H8 H5 HA HK 
+H4 C8 H9 HQ 
+C6 C9 D6 CK 
+S4 D9 D7 DJ 
+C7 DK H7 HT 
+S7 SQ S3 SJ 
+S8 SK D8 SA 
+ 
+[Event "#"]
+[BOARD "12"]
+[Dealer "W"]
+[Date "2005.10.29"]
+[North "WBridge5"]
+[East "Jack"]
+[South "WBridge5"]
+[West "Jack"]
+[Vulnerable "NS"]
+[Deal "N:KQ95.A975.K75.82 J2.Q6.AQJ942.643 T4.K3.T863.AKQJT A8763.JT842..975"]
+[Declarer "N"]
+[Contract "3NT"]
+[Result "11"]
+[Score "NS 660"]
+[Auction "W"]
+PASS  1D  PASS  2C  
+PASS  2NT PASS  3NT 
+PASS PASS PASS      
+[Play "E"]
+DJ D3 H2 DK 
+C3 CT C5 C2 
+S2 S4 S3 SK 
+H6 HK H4 H5 
+C4 CA C7 C8 
+C6 CK C9 D5 
+D2 CQ S6 H7 
+D4 CJ S7 H9 
+SJ ST SA S5 
+HQ H3 HJ HA 
+D9 D6 S8 SQ 
+DQ D8 H8 S9 
+DA DT HT D7 
+ 
+[Event "#"]
+[BOARD "13"]
+[Dealer "N"]
+[Date "2005.10.29"]
+[North "WBridge5"]
+[East "Jack"]
+[South "WBridge5"]
+[West "Jack"]
+[Vulnerable "Both"]
+[Deal "N:J432.T8.AQT873.2 T987.AK6.K6.JT96 KQ65.Q53.J54.AK7 A.J9742.92.Q8543"]
+[Declarer "S"]
+[Contract "4S"]
+[Result "10"]
+[Score "NS 620"]
+[Auction "N"]
+PASS PASS  1NT PASS 
+ 2C  PASS  2S  PASS 
+ 4S  PASS PASS PASS 
+[Play "W"]
+C3 C2 C9 CA 
+C4 H8 C6 CK 
+SA S2 S7 S6 
+H2 HT HK H3 
+H4 S3 HA H5 
+C5 SJ S8 S5 
+H7 S4 S9 SK 
+H9 D3 ST SQ 
+D2 D7 DK DJ 
+HJ D8 H6 HQ 
+D9 DT D6 D5 
+C8 DA CT D4 
+CQ DQ CJ C7 
+ 
+[Event "#"]
+[BOARD "14"]
+[Dealer "E"]
+[Date "2005.10.29"]
+[North "WBridge5"]
+[East "Jack"]
+[South "WBridge5"]
+[West "Jack"]
+[Vulnerable "None"]
+[Deal "N:J74.Q87.AKJ2.652 AQT9852.K3.T63.K K63.AT65.74.AJT7 .J942.Q985.Q9843"]
+[Declarer "S"]
+[Contract "2NT"]
+[Result "7"]
+[Score "NS -50"]
+[Auction "E"]
+ 1S  PASS PASS  2D  
+PASS  2NT PASS PASS 
+PASS                
+[Play "W"]
+C3 C2 CK CA 
+D5 DK D3 D4 
+H2 H7 H3 HA 
+CQ C5 D6 CJ 
+C9 C6 S2 CT 
+H9 HQ HK H6 
+DQ DA DT D7 
+D8 DJ S5 S3 
+HJ H8 S8 H5 
+C8 D2 S9 C7 
+C4 S4 ST S6 
+D9 S7 SQ SK 
+H4 SJ SA HT 
+ 
+[Event "#"]
+[BOARD "15"]
+[Dealer "S"]
+[Date "2005.10.29"]
+[North "WBridge5"]
+[East "Jack"]
+[South "WBridge5"]
+[West "Jack"]
+[Vulnerable "NS"]
+[Deal "N:AJT65.94.9.AT753 KQ92.632.AK73.98 4.KT8.QJ8542.K64 873.AQJ75.T6.QJ2"]
+[Declarer "W"]
+[Contract "3H"]
+[Result "10"]
+[Score "NS -170"]
+[Auction "S"]
+PASS PASS  1S  PASS 
+ 2D   2H  PASS  3H  
+PASS PASS PASS      
+[Play "N"]
+D9 DK D5 D6 
+H9 H2 H8 HA 
+H4 H3 HK HJ 
+C3 D3 D2 DT 
+S5 H6 HT HQ 
+S6 SQ S4 S3 
+ST D7 D8 H5 
+SA S2 C4 S7 
+CA C8 CK C2 
+C5 C9 C6 CJ 
+SJ SK D4 S8 
+C7 S9 DJ H7 
+CT DA DQ CQ 
+ 
+[Event "#"]
+[BOARD "16"]
+[Dealer "W"]
+[Date "2005.10.29"]
+[North "WBridge5"]
+[East "Jack"]
+[South "WBridge5"]
+[West "Jack"]
+[Vulnerable "EW"]
+[Deal "N:5.8763.JT2.98543 QT2.KT9.AQ9875.T AJ963.AQ5.K43.AK K874.J42.6.QJ762"]
+[Declarer "S"]
+[Contract "2NT"]
+[Result "6"]
+[Score "NS -100"]
+[Auction "W"]
+PASS PASS  1D    X  
+ 1S  PASS  2S   2NT 
+PASS PASS PASS      
+[Play "W"]
+D6 DT DA D4 
+C2 C3 CT CA 
+S4 S5 SQ S9 
+SK C4 ST SJ 
+C7 C5 D5 CK 
+S7 C8 S2 S6 
+CQ C9 D7 D3 
+CJ D2 D8 H5 
+C6 DJ D9 HQ 
+H2 H3 HK HA 
+H4 H6 DQ DK 
+S8 H7 H9 SA 
+HJ H8 HT S3 
+ 
+[Event "#"]
+[Site ""]
+[Date "2005.10.29"]
+[BOARD "1"]
+[Dealer "N"]
+[Vulnerable "None"]
+[Deal "N:AQJ643.A.J4.QJ64 K7.KQJT85.AKQ5.A T852.962.T863.K7 9.743.972.T98532"]
+[North "Jack"]
+[East "WBridge5"]
+[South "Jack"]
+[West "WBridge5"]
+[Declarer "E"]
+[Contract "5H"]
+[Result "11"]
+[Score "NS -450"]
+[Auction "N"]
+ 1S    X   2S  PASS 
+ 3C   4H   4S   5H  
+PASS PASS PASS      
+[Play "S"]
+S5 S9 SA S7 
+C7 C2 CQ CA 
+H2 H3 HA HK 
+CK C3 C4 H8 
+H6 H4 S3 HQ 
+D3 D2 D4 DA 
+D6 D7 DJ DK 
+D8 D9 S4 DQ 
+DT H7 S6 D5 
+S2 C5 C6 HJ 
+H9 C8 CJ HT 
+S8 C9 SJ H5 
+ST CT SQ SK 
+ 
+[Event "#"]
+[BOARD "2"]
+[Dealer "E"]
+[Date "2005.10.29"]
+[North "Jack"]
+[East "WBridge5"]
+[South "Jack"]
+[West "WBridge5"]
+[Vulnerable "NS"]
+[Deal "N:754.AJT732.KT9.T J82.KQ64.QJ6.K64 AT963.8.A2.Q9852 KQ.95.87543.AJ73"]
+[Declarer "S"]
+[Contract "3S"]
+[Result "9"]
+[Score "NS 140"]
+[Auction "E"]
+ 1C   1S   1NT  2C  
+PASS  3S  PASS PASS 
+PASS                
+[Play "W"]
+D3 D9 DJ DA 
+H9 HA H6 H8 
+C7 CT CK C2 
+SQ S4 S2 SA 
+C3 S5 C6 C5 
+H5 H7 H4 S3 
+CJ S7 C4 C8 
+D4 DK D6 D2 
+D5 DT DQ S6 
+CA H2 HQ C9 
+D8 H3 HK S9 
+SK HT S8 ST 
+D7 HJ SJ CQ 
+ 
+[Event "#"]
+[BOARD "3"]
+[Dealer "S"]
+[Date "2005.10.29"]
+[North "Jack"]
+[East "WBridge5"]
+[South "Jack"]
+[West "WBridge5"]
+[Vulnerable "EW"]
+[Deal "N:A82.K8632.AK.KJ6 J73.J.QJ9872.Q72 QT9.Q97.65.AT954 K654.AT54.T43.83"]
+[Declarer "N"]
+[Contract "4H"]
+[Result "9"]
+[Score "NS -50"]
+[Auction "S"]
+PASS PASS  1H  PASS 
+ 2H  PASS  2S  PASS 
+ 3D  PASS  3NT PASS 
+ 4C  PASS  4H  PASS 
+PASS PASS           
+[Play "E"]
+S3 SQ SK SA 
+SJ S9 S4 S8 
+S7 ST S5 S2 
+DJ D5 D3 DK 
+HJ H7 H5 HK 
+C2 H9 HA H2 
+C7 HQ H4 H3 
+CQ C4 C3 CJ 
+D2 D6 DT DA 
+D7 C9 C8 C6 
+D8 C5 D4 CK 
+D9 CT HT H8 
+DQ CA S6 H6 
+ 
+[Event "#"]
+[BOARD "4"]
+[Dealer "W"]
+[Date "2005.10.29"]
+[North "Jack"]
+[East "WBridge5"]
+[South "Jack"]
+[West "WBridge5"]
+[Vulnerable "Both"]
+[Deal "N:KJ95.T54.85.A642 Q42.QJ986.JT.QJ8 A63.A32.KQ63.K53 T87.K7.A9742.T97"]
+[Declarer "S"]
+[Contract "2NT"]
+[Result "8"]
+[Score "NS 120"]
+[Auction "W"]
+PASS PASS PASS  1NT 
+PASS  2C  PASS  2D  
+PASS  2NT PASS PASS 
+PASS                
+[Play "W"]
+D4 D5 DT DK 
+C7 C2 C8 C3 
+H7 H4 HQ H3 
+D2 D8 DJ D3 
+HK H5 H8 HA 
+C9 C4 CJ CK 
+CT CA CQ C5 
+D7 C6 H6 H2 
+S7 HT HJ D6 
+D9 S5 H9 DQ 
+S8 S9 S2 S3 
+ST SJ SQ SA 
+DA SK S4 S6 
+ 
+[Event "#"]
+[BOARD "5"]
+[Dealer "N"]
+[Date "2005.10.29"]
+[North "Jack"]
+[East "WBridge5"]
+[South "Jack"]
+[West "WBridge5"]
+[Vulnerable "NS"]
+[Deal "N:JT4.KJT9853.Q.J6 K952.A.KJ85.9743 763.Q42.T9762.AT AQ8.76.A43.KQ852"]
+[Declarer "N"]
+[Contract "3HX"]
+[Result "7"]
+[Score "NS -500"]
+[Auction "N"]
+ 3H  PASS PASS   X  
+PASS PASS PASS      
+[Play "E"]
+HA H2 H7 H3 
+C7 CT CQ C6 
+D8 H4 H6 HT 
+C3 CA C5 CJ 
+S5 S3 SA S4 
+SK S6 S8 ST 
+D5 D2 DA DQ 
+DJ D6 D4 SJ 
+S2 S7 SQ H5 
+C4 HQ C2 H8 
+DK DT D3 H9 
+C9 D7 C8 HK 
+S9 D9 CK HJ 
+ 
+[Event "#"]
+[BOARD "6"]
+[Dealer "E"]
+[Date "2005.10.29"]
+[North "Jack"]
+[East "WBridge5"]
+[South "Jack"]
+[West "WBridge5"]
+[Vulnerable "EW"]
+[Deal "N:K4.AJ94.Q32.KQJ2 76.K.A765.A98643 QJT2.T532.KJT.T5 A9853.Q876.984.7"]
+[Declarer "E"]
+[Contract "2C"]
+[Result "7"]
+[Score "NS 100"]
+[Auction "E"]
+ 1C  PASS  1S  PASS 
+ 2C  PASS PASS PASS 
+[Play "S"]
+H3 H6 HJ HK 
+C5 C7 C2 CA 
+CT D4 CJ C9 
+DT D8 D2 DA 
+DJ H7 CQ C8 
+H2 S3 CK C6 
+DK D9 D3 D7 
+SQ S5 S4 S7 
+HT H8 H4 C4 
+S2 HQ DQ D6 
+ST SA SK S6 
+SJ S9 H9 C3 
+H5 S8 HA D5 
+ 
+[Event "#"]
+[BOARD "7"]
+[Dealer "S"]
+[Date "2005.10.29"]
+[North "Jack"]
+[East "WBridge5"]
+[South "Jack"]
+[West "WBridge5"]
+[Vulnerable "Both"]
+[Deal "N:AT943.J2.43.AKT5 87.T73.AQ98.QJ83 J.AK98654.K752.4 KQ652.Q.JT6.9762"]
+[Declarer "S"]
+[Contract "4H"]
+[Result "11"]
+[Score "NS 650"]
+[Auction "S"]
+ 1H   1S   2C  PASS 
+ 2H  PASS  2S  PASS 
+ 3D  PASS  3NT PASS 
+ 4H  PASS PASS PASS 
+[Play "W"]
+HQ H2 H3 HA 
+S2 HJ H7 H4 
+C7 CK C3 C4 
+C2 C5 CJ H5 
+C6 D3 HT HK 
+S5 S3 D8 H6 
+S6 SA S8 SJ 
+C9 CA C8 D2 
+D6 D4 D9 DK 
+DT S4 DQ D5 
+DJ CT CQ D7 
+SQ S9 DA H8 
+SK ST S7 H9 
+ 
+[Event "#"]
+[BOARD "8"]
+[Dealer "W"]
+[Date "2005.10.29"]
+[North "Jack"]
+[East "WBridge5"]
+[South "Jack"]
+[West "WBridge5"]
+[Vulnerable "None"]
+[Deal "N:KT.AQ9874.864.52 QJ76.62.QT.J9864 9432..AK9732.AKT A85.KJT53.J5.Q73"]
+[Declarer "N"]
+[Contract "3H"]
+[Result "10"]
+[Score "NS 170"]
+[Auction "W"]
+PASS  3H  PASS PASS 
+PASS                
+[Play "E"]
+H6 D2 HT HQ 
+H2 D3 H5 HA 
+C4 D7 HJ H4 
+S7 D9 HK H7 
+DT DK D5 D6 
+S6 S2 S8 SK 
+DQ S3 H3 H8 
+C6 CK C3 C2 
+C8 CA C7 C5 
+C9 DA DJ D4 
+SJ S4 SA ST 
+CJ CT CQ H9 
+SQ S9 S5 D8 
+ 
+[Event "#"]
+[BOARD "9"]
+[Dealer "N"]
+[Date "2005.10.29"]
+[North "Jack"]
+[East "WBridge5"]
+[South "Jack"]
+[West "WBridge5"]
+[Vulnerable "EW"]
+[Deal "N:AKQ.AJT.KQ6.J763 9875.Q963.54.A95 T432.75.AT97.K42 J6.K842.J832.QT8"]
+[Declarer "N"]
+[Contract "3NT"]
+[Result "10"]
+[Score "NS 430"]
+[Auction "N"]
+ 2NT PASS  3C  PASS 
+ 3NT PASS PASS PASS 
+[Play "E"]
+D5 D9 DJ DK 
+S7 S2 S6 SQ 
+D4 D7 D2 DQ 
+S5 S3 SJ SK 
+S8 S4 H4 SA 
+S9 DT D8 D6 
+H3 ST H2 C3 
+C5 DA D3 C6 
+HQ H5 H8 HJ 
+C9 C2 CQ C7 
+CA C4 CT CJ 
+H6 H7 HK HA 
+H9 CK C8 HT 
+ 
+[Event "#"]
+[BOARD "10"]
+[Dealer "E"]
+[Date "2005.10.29"]
+[North "Jack"]
+[East "WBridge5"]
+[South "Jack"]
+[West "WBridge5"]
+[Vulnerable "Both"]
+[Deal "N:K964.97.AK32.974 T.T653.QJT64.AJ6 Q532.AKJ84.95.Q2 AJ87.Q2.87.KT853"]
+[Declarer "N"]
+[Contract "4S"]
+[Result "8"]
+[Score "NS -200"]
+[Auction "E"]
+PASS  2D  PASS  4S  
+PASS PASS PASS      
+[Play "E"]
+DQ D5 D8 DA 
+ST SQ SA S4 
+CA C2 C3 C7 
+CJ CQ CK C4 
+C6 S2 CT C9 
+D6 D9 D7 DK 
+D4 S3 HQ D2 
+H3 HJ H2 H7 
+DT S5 S7 S9 
+H5 H4 S8 SK 
+H6 HK SJ H9 
+DJ H8 C8 D3 
+HT HA C5 S6 
+ 
+[Event "#"]
+[BOARD "11"]
+[Dealer "S"]
+[Date "2005.10.29"]
+[North "Jack"]
+[East "WBridge5"]
+[South "Jack"]
+[West "WBridge5"]
+[Vulnerable "None"]
+[Deal "N:KQT.J5.K942.QT98 932.A972.A8765.J AJ6.KQT3.QJ3.K52 8754.864.T.A7643"]
+[Declarer "S"]
+[Contract "3NT"]
+[Result "10"]
+[Score "NS 430"]
+[Auction "S"]
+ 1NT PASS  3C  PASS 
+ 3D  PASS  3NT PASS 
+PASS PASS           
+[Play "W"]
+C4 C8 CJ CK 
+DT DK DA D3 
+H4 H5 H7 HK 
+CA C9 S2 C2 
+H6 HJ HA H3 
+H8 D2 H2 HT 
+C3 CT H9 C5 
+C6 D4 D5 DJ 
+C7 D9 S3 HQ 
+S4 ST S9 S6 
+S5 CQ D6 SJ 
+S7 SK D7 SA 
+S8 SQ D8 DQ 
+ 
+[Event "#"]
+[BOARD "12"]
+[Dealer "W"]
+[Date "2005.10.29"]
+[North "Jack"]
+[East "WBridge5"]
+[South "Jack"]
+[West "WBridge5"]
+[Vulnerable "NS"]
+[Deal "N:KQ95.A975.K75.82 J2.Q6.AQJ942.643 T4.K3.T863.AKQJT A8763.JT842..975"]
+[Declarer "S"]
+[Contract "3NT"]
+[Result "10"]
+[Score "NS 630"]
+[Auction "W"]
+PASS  1C   3D   3NT 
+PASS PASS PASS      
+[Play "W"]
+HJ H5 H6 HK 
+C5 C2 C3 CT 
+C7 C8 C4 CJ 
+C9 D5 C6 CQ 
+S3 D7 DJ CK 
+S6 DK D2 CA 
+S7 SQ S2 S4 
+H2 HA HQ H3 
+SA SK SJ ST 
+S8 S5 D4 D3 
+H4 H7 D9 D6 
+H8 S9 DQ D8 
+HT H9 DA DT 
+ 
+[Event "#"]
+[BOARD "13"]
+[Dealer "N"]
+[Date "2005.10.29"]
+[North "Jack"]
+[East "WBridge5"]
+[South "Jack"]
+[West "WBridge5"]
+[Vulnerable "Both"]
+[Deal "N:J432.T8.AQT873.2 T987.AK6.K6.JT96 KQ65.Q53.J54.AK7 A.J9742.92.Q8543"]
+[Declarer "N"]
+[Contract "3D"]
+[Result "9"]
+[Score "NS 110"]
+[Auction "N"]
+PASS PASS  1NT PASS 
+ 2S  PASS  3C  PASS 
+ 3D  PASS PASS PASS 
+[Play "E"]
+HA H3 H2 H8 
+HK H5 H7 HT 
+ST S5 SA S4 
+H6 HQ H4 DT 
+C6 CK C3 C2 
+D6 D4 D9 DA 
+DK D5 D2 D3 
+CJ C7 CQ D7 
+S7 SQ C4 S2 
+S8 S6 C5 SJ 
+S9 SK C8 S3 
+C9 CA H9 D8 
+CT DJ HJ DQ 
+ 
+[Event "#"]
+[BOARD "14"]
+[Dealer "E"]
+[Date "2005.10.29"]
+[North "Jack"]
+[East "WBridge5"]
+[South "Jack"]
+[West "WBridge5"]
+[Vulnerable "None"]
+[Deal "N:J74.Q87.AKJ2.652 AQT9852.K3.T63.K K63.AT65.74.AJT7 .J942.Q985.Q9843"]
+[Declarer "E"]
+[Contract "4S"]
+[Result "6"]
+[Score "NS 200"]
+[Auction "E"]
+ 4S  PASS PASS PASS 
+[Play "S"]
+D7 D5 DJ D3 
+D4 D8 DA D6 
+H5 D9 DK DT 
+CA C3 C6 CK 
+HA H2 H7 H3 
+HT H4 H8 HK 
+S3 C4 S4 SA 
+SK C8 S7 SQ 
+H6 H9 HQ S5 
+S6 C9 SJ ST 
+C7 DQ D2 S9 
+CT CQ C2 S8 
+CJ HJ C5 S2 
+ 
+[Event "#"]
+[BOARD "15"]
+[Dealer "S"]
+[Date "2005.10.29"]
+[North "Jack"]
+[East "WBridge5"]
+[South "Jack"]
+[West "WBridge5"]
+[Vulnerable "NS"]
+[Deal "N:AJT65.94.9.AT753 KQ92.632.AK73.98 4.KT8.QJ8542.K64 873.AQJ75.T6.QJ2"]
+[Declarer "W"]
+[Contract "3H"]
+[Result "9"]
+[Score "NS -140"]
+[Auction "S"]
+PASS PASS  2S  PASS 
+PASS  3H  PASS PASS 
+PASS                
+[Play "N"]
+D9 DK D2 D6 
+H4 H2 H8 HQ 
+H9 H3 HT HA 
+C3 DA D4 DT 
+CA C8 C4 CQ 
+C5 C9 CK C2 
+S5 H6 HK H5 
+S6 D3 DQ HJ 
+ST SQ S4 S3 
+SJ D7 D8 H7 
+SA S2 D5 S8 
+CT S9 C6 CJ 
+C7 SK DJ S7 
+ 
+[Event "#"]
+[BOARD "16"]
+[Dealer "W"]
+[Date "2005.10.29"]
+[North "Jack"]
+[East "WBridge5"]
+[South "Jack"]
+[West "WBridge5"]
+[Vulnerable "EW"]
+[Deal "N:5.8763.JT2.98543 QT2.KT9.AQ9875.T AJ963.AQ5.K43.AK K874.J42.6.QJ762"]
+[Declarer "E"]
+[Contract "3D"]
+[Result "6"]
+[Score "NS 300"]
+[Auction "W"]
+PASS PASS  1D    X  
+ 1S  PASS  2D   2NT 
+PASS PASS  3D  PASS 
+PASS PASS           
+[Play "S"]
+CA C2 C9 CT 
+SA S4 S5 ST 
+SJ SK D2 S2 
+HA H2 H8 HK 
+S3 S7 DT SQ 
+CK C6 C5 D5 
+D3 D6 DJ DA 
+DK C7 C3 DQ 
+D4 CJ C4 D9 
+HQ H4 H3 HT 
+H5 HJ H6 H9 
+S6 CQ C8 D8 
+S9 S8 H7 D7 

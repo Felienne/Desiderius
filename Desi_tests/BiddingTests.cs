@@ -330,29 +330,61 @@ namespace Desi_tests
          [TestMethod]
          public void ACOL_Open_1_Hearts_Answer_SA()
          {
-            string deal = "[Deal \"W:K62.J872.AT2.A85 - A864.T8.532.AJT3 -\"]";
+            string deal = "[Deal \"W:K62.J872.AT2.A85 - A64.T8.T532.AJT3 -\"]";
 
             var result = Desiderius.PBN.getHandList(deal);
             var westHand = result[0];
             var eastHand = result[2];
 
-            var pointsWest = Desi.pointsinHand(westHand);
-            var pointsEast = Desi.pointsinHand(eastHand);
-
             var history = emptyHistory;
-
             var bidResultWest = Desi.getBid(westHand, Desi.createAcol, history, 0);
-
             Assert.AreEqual(Desi.Bid.NewBid(1, Desi.Suit.Hearts), bidResultWest);
-
-            history = ListModule.OfSeq(new List<Desi.Bid> { bidResultWest });
            
+             history = ListModule.OfSeq(new List<Desi.Bid> { bidResultWest });          
             var bidResultEast = Desi.getBid(eastHand, Desi.createAcol, history, 1);
             var supportBid = Desi.Bid.NewBid(1, Desi.Suit.SA);
             Assert.AreEqual(supportBid, bidResultEast);
          }
 
+         [TestMethod]
+         public void ACOL_Open_1_Clubs_Answer_Hearts()
+         {
+             string deal = "[Deal \"W:K62.J87.AT2.A852 - T82.A864.J53.AT3 -\"]";
 
+             var result = Desiderius.PBN.getHandList(deal);
+             var westHand = result[0];
+             var eastHand = result[2];
+
+             var history = emptyHistory;
+             var bidResultWest = Desi.getBid(westHand, Desi.createAcol, history, 0);
+             Assert.AreEqual(Desi.Bid.NewBid(1, Desi.Suit.Clubs), bidResultWest);
+
+             history = ListModule.OfSeq(new List<Desi.Bid> { bidResultWest });
+             var bidResultEast = Desi.getBid(eastHand, Desi.createAcol, history, 1);
+             var supportBid = Desi.Bid.NewBid(1, Desi.Suit.Hearts);
+             
+             Assert.AreEqual(supportBid, bidResultEast);
+         }
+
+         [TestMethod]
+         public void ACOL_Open_1_Clubs_Answer_Diamonds_If_also_Hearts()
+         {
+             string deal = "[Deal \"W:K62.J87.AT2.A852 - T8.A864.J532.AT3 -\"]";
+
+             var result = Desiderius.PBN.getHandList(deal);
+             var westHand = result[0];
+             var eastHand = result[2];
+
+             var history = emptyHistory;
+             var bidResultWest = Desi.getBid(westHand, Desi.createAcol, history, 0);
+             Assert.AreEqual(Desi.Bid.NewBid(1, Desi.Suit.Clubs), bidResultWest);
+
+             history = ListModule.OfSeq(new List<Desi.Bid> { bidResultWest });
+             var bidResultEast = Desi.getBid(eastHand, Desi.createAcol, history, 1);
+             var supportBid = Desi.Bid.NewBid(1, Desi.Suit.Diamonds);
+
+             Assert.AreEqual(supportBid, bidResultEast);
+         }
 
 
 

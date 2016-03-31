@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3DBE917A-9E42-44F3-A0D2-14B10232A3C3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BridgeFundamentals</RootNamespace>
+    <AssemblyName>BridgeFundamentals</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkProfile>Profile7</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>BridgeFundamentals.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .NET Framework is automatically included -->
+    <EmbeddedResource Include="LocalizationResources.nl.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>LocalizationResources.nl.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Sodes.Bridge.Base</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizationResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>LocalizationResources.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Sodes.Bridge.Base</CustomToolNamespace>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Auction.cs" />
+    <Compile Include="Bid.cs" />
+    <Compile Include="Board.cs" />
+    <Compile Include="BoardResultOwner.cs" />
+    <Compile Include="BoardResultRecorder.cs" />
+    <Compile Include="BridgeEventBusClient.cs" />
+    <Compile Include="BoardResult.cs" />
+    <Compile Include="BridgeEventBus.cs" />
+    <Compile Include="BridgeEventHandler.cs" />
+    <Compile Include="BridgeRobot.cs" />
+    <Compile Include="Card.cs" />
+    <Compile Include="Contract.cs" />
+    <Compile Include="Conventie.cs" />
+    <Compile Include="ConventionCard.cs" />
+    <Compile Include="Distribution.cs" />
+    <Compile Include="ExceptionHandling.cs" />
+    <Compile Include="LocalizationResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LocalizationResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizationResources.nl.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LocalizationResources.nl.resx</DependentUpon>
+    </Compile>
+    <Compile Include="NonBridgeHelpers\BitArrayExtension.cs" />
+    <Compile Include="NonBridgeHelpers\Cache.cs" />
+    <Compile Include="NonBridgeHelpers\CircularList.cs" />
+    <Compile Include="NonBridgeHelpers\Combinatorial.cs" />
+    <Compile Include="NonBridgeHelpers\Deployment.cs" />
+    <Compile Include="NonBridgeHelpers\ElapsedTime.cs" />
+    <Compile Include="NonBridgeHelpers\Encryption.cs" />
+    <Compile Include="NonBridgeHelpers\EnumCollection.cs" />
+    <Compile Include="NonBridgeHelpers\ExpressionTree.cs" />
+    <Compile Include="NonBridgeHelpers\GenericMath.cs" />
+    <Compile Include="NonBridgeHelpers\JSON.cs" />
+    <Compile Include="NonBridgeHelpers\LocalData.cs" />
+    <Compile Include="NonBridgeHelpers\LoggingHelper1.cs" />
+    <Compile Include="NonBridgeHelpers\LoggingHelper2.cs" />
+    <Compile Include="NonBridgeHelpers\Memory.cs" />
+    <Compile Include="NonBridgeHelpers\OrderedOptions.cs" />
+    <Compile Include="NonBridgeHelpers\PriorityQueue.cs" />
+    <Compile Include="NonBridgeHelpers\ProductVersion.cs" />
+    <Compile Include="NonBridgeHelpers\RandomGenerator.cs" />
+    <Compile Include="NonBridgeHelpers\SerializableDictionary.cs" />
+    <Compile Include="NonBridgeHelpers\Set.cs" />
+    <Compile Include="NonBridgeHelpers\Stopwatch.cs" />
+    <Compile Include="NonBridgeHelpers\Threading.cs" />
+    <Compile Include="NonBridgeHelpers\Trace.cs" />
+    <Compile Include="NonBridgeHelpers\Traceable.cs" />
+    <Compile Include="Participant.cs" />
+    <Compile Include="Pbn2Tournament.cs" />
+    <Compile Include="PlaySequence.cs" />
+    <Compile Include="ProgramType.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Ranks.cs" />
+    <Compile Include="Scoring.cs" />
+    <Compile Include="Seats.cs" />
+    <Compile Include="Suits.cs" />
+    <Compile Include="Tournament.cs" />
+    <Compile Include="TournamentController.cs" />
+    <Compile Include="TournamentLoader.cs" />
+    <Compile Include="Vulnerable.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BridgeFundamentals.snk" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
