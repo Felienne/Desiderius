@@ -150,7 +150,7 @@ namespace Desi_tests
 
             var history = emptyHistory;
 
-            var bid = Desi.getBid(westHand, Desi.createAcol, history, 0);
+            var bid = Desi.getBid(westHand, Acol.createAcol, history, 0);
 
             Assert.AreEqual(expectedBid, bid);
 
@@ -172,7 +172,7 @@ namespace Desi_tests
 
             var history = emptyHistory;
 
-            var bid = Desi.getBid(westHand, Desi.createAcol, history, 0);
+            var bid = Desi.getBid(westHand, Acol.createAcol, history, 0);
 
             Assert.AreEqual(expectedBid, bid);
          }
@@ -191,7 +191,7 @@ namespace Desi_tests
 
             var history = emptyHistory;
 
-            var bid = Desi.getBid(westHand, Desi.createAcol, history, 0);
+            var bid = Desi.getBid(westHand, Acol.createAcol, history, 0);
 
             Assert.AreEqual(expectedBid, bid);
          }
@@ -210,7 +210,7 @@ namespace Desi_tests
 
             var history = emptyHistory;
 
-            var bid = Desi.getBid(westHand, Desi.createAcol, history, 0);
+            var bid = Desi.getBid(westHand, Acol.createAcol, history, 0);
 
             Assert.AreNotEqual(SAbid, bid);
          }
@@ -230,7 +230,7 @@ namespace Desi_tests
 
             var history = emptyHistory;
 
-            var bid = Desi.getBid(westHand, Desi.createAcol, history, 0);
+            var bid = Desi.getBid(westHand, Acol.createAcol, history, 0);
 
             Assert.AreEqual(Spades1, bid);
          }
@@ -247,7 +247,7 @@ namespace Desi_tests
 
             var history = emptyHistory;
 
-            var bid = Desi.getBid(westHand, Desi.createAcol, history, 0);
+            var bid = Desi.getBid(westHand, Acol.createAcol, history, 0);
 
             Assert.AreEqual(Spades1, bid);
          }
@@ -269,13 +269,13 @@ namespace Desi_tests
 
             var history = emptyHistory;
 
-            var bidResultWest = Desi.getBid(westHand, Desi.createAcol, history, 0);
+            var bidResultWest = Desi.getBid(westHand, Acol.createAcol, history, 0);
 
             Assert.AreEqual(Desi.Bid.NewBid(1, Desi.Suit.Clubs), bidResultWest);
 
             history = ListModule.OfSeq(new List<Desi.Bid> { bidResultWest });
 
-            var bidResultEast = Desi.getBid(westHand, Desi.createAcol, history, 1);
+            var bidResultEast = Desi.getBid(westHand, Acol.createAcol, history, 1);
 
             var pass = Desi.Bid.Pass;
 
@@ -296,11 +296,11 @@ namespace Desi_tests
             var pointsEast = Desi.pointsinHand(eastHand);
 
             var history = emptyHistory;
-            var bidResultWest = Desi.getBid(westHand, Desi.createAcol, history, 0);
+            var bidResultWest = Desi.getBid(westHand, Acol.createAcol, history, 0);
             Assert.AreEqual(Desi.Bid.NewBid(1, Desi.Suit.Clubs), bidResultWest);
 
             history = ListModule.OfSeq(new List<Desi.Bid> { bidResultWest });
-            var bidResultEast = Desi.getBid(eastHand, Desi.createAcol, history, 1);
+            var bidResultEast = Desi.getBid(eastHand, Acol.createAcol, history, 1);
             var supportBid = Desi.Bid.NewBid(2, Desi.Suit.Clubs);
             Assert.AreEqual(supportBid, bidResultEast);
          }
@@ -318,11 +318,11 @@ namespace Desi_tests
             var pointsEast = Desi.pointsinHand(eastHand);
 
             var history = emptyHistory;
-            var bidResultWest = Desi.getBid(westHand, Desi.createAcol, history, 0);
+            var bidResultWest = Desi.getBid(westHand, Acol.createAcol, history, 0);
             Assert.AreEqual(Desi.Bid.NewBid(1, Desi.Suit.Hearts), bidResultWest);
 
             history = ListModule.OfSeq(new List<Desi.Bid> { bidResultWest });
-            var bidResultEast = Desi.getBid(eastHand, Desi.createAcol, history, 1);
+            var bidResultEast = Desi.getBid(eastHand, Acol.createAcol, history, 1);
             var supportBid = Desi.Bid.NewBid(2, Desi.Suit.Hearts);
             Assert.AreEqual(supportBid, bidResultEast);
          }
@@ -337,11 +337,11 @@ namespace Desi_tests
             var eastHand = result[2];
 
             var history = emptyHistory;
-            var bidResultWest = Desi.getBid(westHand, Desi.createAcol, history, 0);
+            var bidResultWest = Desi.getBid(westHand, Acol.createAcol, history, 0);
             Assert.AreEqual(Desi.Bid.NewBid(1, Desi.Suit.Hearts), bidResultWest);
            
              history = ListModule.OfSeq(new List<Desi.Bid> { bidResultWest });          
-            var bidResultEast = Desi.getBid(eastHand, Desi.createAcol, history, 1);
+            var bidResultEast = Desi.getBid(eastHand, Acol.createAcol, history, 1);
             var supportBid = Desi.Bid.NewBid(1, Desi.Suit.SA);
             Assert.AreEqual(supportBid, bidResultEast);
          }
@@ -356,11 +356,11 @@ namespace Desi_tests
              var eastHand = result[2];
 
              var history = emptyHistory;
-             var bidResultWest = Desi.getBid(westHand, Desi.createAcol, history, 0);
+             var bidResultWest = Desi.getBid(westHand, Acol.createAcol, history, 0);
              Assert.AreEqual(Desi.Bid.NewBid(1, Desi.Suit.Clubs), bidResultWest);
 
              history = ListModule.OfSeq(new List<Desi.Bid> { bidResultWest });
-             var bidResultEast = Desi.getBid(eastHand, Desi.createAcol, history, 1);
+             var bidResultEast = Desi.getBid(eastHand, Acol.createAcol, history, 1);
              var supportBid = Desi.Bid.NewBid(1, Desi.Suit.Hearts);
              
              Assert.AreEqual(supportBid, bidResultEast);
@@ -376,11 +376,11 @@ namespace Desi_tests
              var eastHand = result[2];
 
              var history = emptyHistory;
-             var bidResultWest = Desi.getBid(westHand, Desi.createAcol, history, 0);
+             var bidResultWest = Desi.getBid(westHand, Acol.createAcol, history, 0);
              Assert.AreEqual(Desi.Bid.NewBid(1, Desi.Suit.Clubs), bidResultWest);
 
              history = ListModule.OfSeq(new List<Desi.Bid> { bidResultWest });
-             var bidResultEast = Desi.getBid(eastHand, Desi.createAcol, history, 1);
+             var bidResultEast = Desi.getBid(eastHand, Acol.createAcol, history, 1);
              var supportBid = Desi.Bid.NewBid(1, Desi.Suit.Diamonds);
 
              Assert.AreEqual(supportBid, bidResultEast);
@@ -410,7 +410,7 @@ namespace Desi_tests
 
          //   );
 
-         //   var bid = Desi.getBid(eastHand, Desi.createAcol, history, 0);
+         //   var bid = Desi.getBid(eastHand, Acol.createAcol, history, 0);
 
          //   Assert.AreEqual(expectedBid, bid);
 
