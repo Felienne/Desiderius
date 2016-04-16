@@ -61,6 +61,7 @@ module Desi =
     let pointsinHand(h:Hand): int = 
         match h with
         | Hand list -> List.fold (+) 0 (List.map cardtoPoint list)
+        | Empty -> 0
 
     let isSuit (suit: Suit) (c:Card) = 
         match c with
@@ -134,18 +135,17 @@ module Desi =
 
 
     let Acol1(hist:BidHistory):RuleSet =
-
-        [ points 15 17 & forAllSuits (cards 2 13) := Bid (1, Suit.SA)      
+        [ points 15 17 & forAllSuits (cards 2 13) := Bid (1, Suit.SA)
           //if possible, we always prefer to open 1SA
-          //opening 1SA interesting question: do we want/need universal quantifiers? For all colors > 2
-          //do we support the natively or just with a fun?
 
-          //we bid five in order of hight to low, if there is a 6 in there (and the hard is not too strong), we also bid the highest
-          points 12 19 & cards 5 13 Suit.Spades := Bid (1, Suit.Spades) 
-
-          points 12 19 & cards 5 13 Suit.Clubs := Bid (1, Suit.Clubs) 
+          //we bid five in order of high to low, if there is a 6 in there 
+          //(and the hard is not too strong), 
+          //we also bid the highest
+          points 12 19 & cards 5 13 Suit.Spades := Bid (1, Suit.Spades)
           points 12 19 & cards 5 13 Suit.Hearts := Bid (1, Suit.Hearts)
           points 12 19 & cards 5 13 Suit.Diamonds:= Bid (1, Suit.Diamonds)
+          points 12 19 & cards 5 13 Suit.Clubs := Bid (1, Suit.Clubs) 
+
 
           //we bid four in order of low to high
           points 12 19 & cards 4 13 Suit.Clubs := Bid (1, Suit.Clubs) 
