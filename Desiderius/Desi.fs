@@ -1,6 +1,5 @@
 ﻿namespace Desiderius
 
-
 //types of the game
 module Desi =
 
