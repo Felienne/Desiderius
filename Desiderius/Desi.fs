@@ -14,10 +14,12 @@ module Desi =
 
     let next(p:Direction) = 
         match p with
-        | West -> Direction.North
-        | East -> Direction.South
-        | South -> Direction.West
-        | North -> Direction.South
+        | Direction.West -> Direction.North
+        | Direction.East -> Direction.South
+        | Direction.South -> Direction.West
+        | Direction.North -> Direction.South
+        | _ -> failwith <| sprintf "Direction %A not matched" p
+
 
     type Dealer = Dealer of Direction 
 
@@ -56,6 +58,8 @@ module Desi =
     let cardsinHand (h:Hand) = 
         match h with
         | Hand list -> list
+        | Empty -> []
+
 
     let pointsinHand(h:Hand): int = 
         match h with
@@ -64,11 +68,13 @@ module Desi =
 
     let isSuit (suit: Suit) (c:Card) = 
         match c with
-        | Card (s,r) -> s = suit 
+        | Card (s,_) -> s = suit 
 
     let cardsofSuitinHand(h:Hand) (s:Suit) : int = 
         match h with
         | Hand h -> List.length (List.filter (isSuit s) h)
+        | Empty -> 0
+
 
     //auxiliary functions for showing hands
 
@@ -130,6 +136,8 @@ module Desi =
     let raise (b:Bid) (i:int):Bid = 
         match b with 
         | Bid (v,s) -> Bid (v+1,s)
+        | Pass -> failwith "Pass bid cannot be raised"
+
 
     let rec fits (cards:Hand) (c:Condition):bool  = 
         match c with
