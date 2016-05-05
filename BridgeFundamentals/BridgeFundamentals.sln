@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BridgeFundamentals", "BridgeFundamentals\BridgeFundamentals.csproj", "{3DBE917A-9E42-44F3-A0D2-14B10232A3C3}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BridgeNetworkProtocol.UnitTests", "BridgeNetworkProtocol.UnitTests\BridgeNetworkProtocol.UnitTests.csproj", "{DA77A130-9908-4179-ACD9-C9B31FDB2D41}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BridgeNetworkProtocol", "BridgeNetworkProtocol2\BridgeNetworkProtocol.csproj", "{8FF4C890-56FB-4616-AE59-FE775BE31755}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestServerConsole", "TestServerConsole\TestServerConsole.csproj", "{A82F2CF9-9B11-4F51-80E4-D2E04043E763}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,26 +35,12 @@ Global
 		{8FF4C890-56FB-4616-AE59-FE775BE31755}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8FF4C890-56FB-4616-AE59-FE775BE31755}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8FF4C890-56FB-4616-AE59-FE775BE31755}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A82F2CF9-9B11-4F51-80E4-D2E04043E763}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A82F2CF9-9B11-4F51-80E4-D2E04043E763}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A82F2CF9-9B11-4F51-80E4-D2E04043E763}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A82F2CF9-9B11-4F51-80E4-D2E04043E763}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 5
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs40
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = BridgeFundamentals\\BridgeFundamentals.csproj
-		SccProjectName1 = BridgeFundamentals
-		SccLocalPath1 = BridgeFundamentals
-		SccProjectUniqueName2 = BridgeFundamentals.UnitTests\\BridgeFundamentals.UnitTests.csproj
-		SccProjectName2 = BridgeFundamentals.UnitTests
-		SccLocalPath2 = BridgeFundamentals.UnitTests
-		SccProjectUniqueName3 = BridgeNetworkProtocol.UnitTests\\BridgeNetworkProtocol.UnitTests.csproj
-		SccProjectName3 = BridgeNetworkProtocol.UnitTests
-		SccLocalPath3 = BridgeNetworkProtocol.UnitTests
-		SccProjectUniqueName4 = BridgeNetworkProtocol2\\BridgeNetworkProtocol.csproj
-		SccProjectName4 = BridgeNetworkProtocol2
-		SccLocalPath4 = BridgeNetworkProtocol2
 	EndGlobalSection
 EndGlobal
